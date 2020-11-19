@@ -1,0 +1,19 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    
+    "test": "cypress open",
+    "record": "cypress run --record --key 4a5a3610-5cfe-4521-b795-bf327694b767"
+
+  },
+  "author": "faiz",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^5.6.0"
+  },
+  
+  "dependencies": {}
+}
