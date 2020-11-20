@@ -6,7 +6,7 @@
   "scripts": {
     
     "test": "cypress open",
-    "record": "cypress run --record --key 4a5a3610-5cfe-4521-b795-bf327694b767"
+    "record": "cypress run --record --key dd77319a-4a8a-4032-894e-0b4fddfb58ca"
 
   },
   "author": "faiz",
