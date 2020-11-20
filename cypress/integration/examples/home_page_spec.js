@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
  
 describe('My First Cypress Test', function() {
-
+    
     it('Visits the Matchi AB Page and check the menu items', function() {
     //Visit the Matchi AB  Website
     cy.visit("https://test.matchiplay.app/");
@@ -20,7 +20,7 @@ describe('My First Cypress Test', function() {
     cy.get('.navbar-left > :nth-child(4) > a > span').eq(0).click();
     cy.wait(1000);
     // Navigating to "Language"
-    cy.get(':nth-child(1) > .dropdown-toggle > span').eq(1).click();
+    cy.get(':nth-child(1) > .dropdown-toggle > span').eq(0).click();
     cy.wait(1000);
     // Navigating to "login"
     cy.get('.navbar-right > :nth-child(2) > a > span').eq(0).click();
