@@ -36,7 +36,7 @@ describe('Matchi AB Automation Testing ', function() {
       cy.get('#q').click().type("Kronan Sports Club") // search for club
       cy.get('.col-sm-2 > .btn').click() // click smash          
       cy.get('#slots_667 > .list-inline.no-margin > :nth-child(4) > .btn').click({ waitForAnimations: false })      
-      cy.get('#se4ea4f2075bc03f00175bc04cbe101cf').click({force: true}) // slot id
+      cy.get('#e4ea4f2075bc03f00175bc04cc7a0339').click({force: true}) // slot id
       cy.get('.col-sm-8 > :nth-child(3) > .radio > label').click({ force: true}) // payment method
       cy.get('#btnSubmit').click() // submit payment
       cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click() // finish booking
