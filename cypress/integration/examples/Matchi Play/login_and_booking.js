@@ -24,7 +24,7 @@ describe('Matchi AB Automation Testing ', function() {
       cy.get('#loginForm > .btn').click()
       
     })
-    /*
+    
 
    //  Booking a timeslot
 
@@ -36,7 +36,7 @@ describe('Matchi AB Automation Testing ', function() {
       cy.get('#q').click().type("Kronan Sports Club") // search for club
       cy.get('.col-sm-2 > .btn').click() // click smash    
       cy.get('.list-inline.no-margin > :nth-child(1) > .btn').contains('13').click({ waitForAnimations: false }) // select any available slot    
-      cy.get('#se4ea4f2075bc03f00175bc04cc5702f2').click({force: true}) // slot id
+      cy.get('#se4ea4f2075bc03f00175bc04cbd801b2').click({force: true}) // slot id
       cy.get('.col-sm-8 > :nth-child(3) > .radio > label').click({ waitForAnimations: false }) // payment method
       cy.get('#btnSubmit').click() // submit payment
       cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click() // finish booking
@@ -50,5 +50,5 @@ describe('Matchi AB Automation Testing ', function() {
 
 
 
-*/
+
   })
