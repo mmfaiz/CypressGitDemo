@@ -4,7 +4,7 @@ describe('My First Cypress Test', function() {
     
     it('Visits the Matchi AB Page and check the menu items', function() {
     //Visit the Matchi AB  Website
-    cy.visit("https://test.matchiplay.app/");
+    cy.visit('/');
     // Navigating to "Booking" 
     cy.get('.navbar-left > :nth-child(1) > a > span').eq(0).click();
     cy.get('.navbar-left > :nth-child(1) > a > span')
