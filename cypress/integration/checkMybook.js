@@ -23,7 +23,7 @@ describe('Loggin and show user all books', () => {
             cy.get(':nth-child(1) > :nth-child(1) > :nth-child(1) > .panel > .panel-body > .text-muted').should('contain','You have no upcoming bookings')    
         }
         else {
-            // ...
+            // ..
             cy.get('.navbar-right > .open > .dropdown-menu').contains('Show all my bookings').click()
             cy.get('.col-sm-3 > .badge').should('be.visible')
 
@@ -31,8 +31,9 @@ describe('Loggin and show user all books', () => {
             cy.get('#acceptConsentModalCheckBoxTerms').click({force: true})
 
             cy.get(':nth-child(1) > .text-right > .btn').click({force:true})
-            cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn-md').click({force: true})
-            cy.get('#cancelCloseBtn').click()
+            cy.get('.btn-rnd.btn-danger').click()
+            //cy.get('#cancelCloseBtn').click()
+           
         }
       })
   })

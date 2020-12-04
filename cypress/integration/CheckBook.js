@@ -7,18 +7,17 @@ describe('Loggin and book', () => {
     cy.wait(500)
     cy.get('#loginForm > .btn').eq(0).click()
     cy.get('.col-sm-4 > .media > .media-body > .media-heading > a').should('contain','Anna')
- 
+    
     cy.get('#acceptConsentModalCheckBoxTerms').click({force: true}) 
     cy.get('#acceptConsentModal > .modal-dialog > .modal-content > .modal-footer').contains('Accept').click({force: true} )
-          
+    
     //go to book page
     cy.get('.col-sm-4 > :nth-child(4) > .btn').click()
-
-  
+          
     //choose indoors, sport, club's name, then smash
     cy.get('#inOutCourt').select('Indoors',{ force: true })
     cy.get('#showDate')
-       .invoke('val', '2020-12-01')
+       .invoke('val', '2020-12-9')
        .trigger('change')
     cy.get('#q').click().type("Lundby-Biskopsgården Klubb") 
     cy.get('.col-sm-2 > .btn').eq(0).click();
@@ -28,9 +27,11 @@ describe('Loggin and book', () => {
       //choose time and slots          
       cy.get('.no-margin.no-padding').first().click()  
       cy.get('.slot.free').first().click()
-      cy.get('#btnSubmit').click() // submit payment
+      cy.get('[class="trailingSlotSelector"]')
+            .select('14:00')
+      cy.get('[class="btn btn-md btn-success"]').click() // submit payment
 
-      cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click() // finish booking
+     cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click() // finish booking
     })
  })
 
