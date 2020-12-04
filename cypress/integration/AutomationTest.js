@@ -22,7 +22,7 @@ describe('Matchi AB Automation Testing ', function() {
     //choose indoors, sport, club's name, then smash
     cy.get('#inOutCourt').select('Indoors',{ force: true })
     cy.get('#showDate')
-       .invoke('val', '2020-12-05')
+       .invoke('val', '2020-12-11')
        .trigger('change')
     cy.get('#q').click().type("Lundby-Biskopsgården Klubb") 
     cy.get('.col-sm-2 > .btn').click();
