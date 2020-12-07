@@ -30,9 +30,11 @@ describe('Loggin and show user all books', () => {
             cy.get('#acceptConsentModal > .modal-dialog > .modal-content > .modal-footer').contains('Accept').click({force: true} )
             cy.get('#acceptConsentModalCheckBoxTerms').click({force: true})
 
-            cy.get(':nth-child(1) > .text-right > .btn').click({force:true})
-            cy.get('.btn-rnd.btn-danger').click()
-            //cy.get('#cancelCloseBtn').click()
+           //delete a booking
+           cy.get(':nth-child(1) > .text-right > .btn').click()
+           cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer')
+             .get('.btn-md').contains('Cancel').click({ force: true })
+           cy.get('#cancelCloseBtn').click()
            
         }
       })
