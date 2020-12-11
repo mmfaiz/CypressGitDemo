@@ -36,7 +36,7 @@ describe('Matchi AB Automation Testing ', function() {
         //choose indoors, sport, club's  name, then smash
         cy.get('#inOutCourt').select('Indoors',{ force: true })
         cy.get('#showDate')
-          .invoke('val', '2020-12-10')
+          .invoke('val', '2020-12-11')
           .trigger('change')
         cy.get('#q').click().type("Lundby-Biskopsgården Klubb") 
         cy.get('.col-sm-2 > .btn').eq(0).click();
@@ -122,11 +122,7 @@ describe('Matchi AB Automation Testing ', function() {
                 
         cy.get('#adyen-encrypted-form > .modal-footer > .btn-success').click()
         cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click()
-  
-              })
-    
-    
-
+       })
   
 
  it('Booking first available slot using Gift Card/pucch Card', function() {
@@ -135,7 +131,7 @@ describe('Matchi AB Automation Testing ', function() {
   //choose indoors, sport, club's name, then smash
   cy.get('#inOutCourt').select('Indoors',{ force: true })
   cy.get('#showDate')
-     .invoke('val', '2020-12-13')
+     .invoke('val', '2020-12-12')
      .trigger('change')
   cy.get('#q').click().type("Lundby-Biskopsgården Klubb") 
   cy.get('.col-sm-2 > .btn').eq(0).click({force: true});
@@ -151,7 +147,6 @@ describe('Matchi AB Automation Testing ', function() {
     cy.get('#loginForm > .checkbox > label').click()      
     cy.get('#loginForm > .btn').click({ force: true })  
     
- 
     //  cy.get('.col-sm-8 > :nth-child(3) > .radio > label').click({ force: true}) // payment method´---punch card
       cy.get('.col-sm-8 > :nth-child(4) > .radio > label').click({ force: true}) // payment metho-----gift card
       cy.get('select').first().select
@@ -192,7 +187,7 @@ describe('Matchi AB Automation Testing ', function() {
     cy.get('#btnSubmit').click() // submit payment
     cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click() // finish booking                     
   })
-  
+
   
 
 })
