@@ -1,0 +1,68 @@
+//== Positioning, Floating and Visibility of Objects
+//##
+//------------------------------------------------------------------------------
+
+//** Visibility
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline !important;
+}
+
+.of-visible {
+    overflow: visible;
+}
+
+.of-hidden {
+    overflow: hidden;
+}
+
+//** Float
+.pull-none {
+    float: none;
+}
+
+//** Positioning
+.absolute-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.absolute-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+.position-static {
+    position: static;
+} 

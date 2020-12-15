@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Transaktioner>
+<Transaktion Tid="6/24/2013 1:47:01 PM" KundId="2910" Produktnr="229273" Titel="Nike Pannband svart" Betalsatt="I" DebPris="70" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/24/2013 2:54:10 PM" KundId="739" Produktnr="100910" Titel="HEAD Championship 4 pack tennisbollar" Betalsatt="I" DebPris="100" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/24/2013 2:54:10 PM" KundId="739" Produktnr="100910" Titel="HEAD Championship 4 pack tennisbollar" Betalsatt="I" DebPris="100" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/25/2013 12:35:05 PM" KundId="3013" Produktnr="229273" Titel="Nike Pannband svart" Betalsatt="I" DebPris="70" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/26/2013 3:39:24 PM" KundId="739" Produktnr="242498" Titel="Asics Gel-Solution Speed St 42.5" Betalsatt="I" DebPris="1360" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/27/2013 1:50:45 PM" KundId="777" Produktnr="226016" Titel="Head prestige pro ll" Betalsatt="I" DebPris="839.3" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/27/2013 2:13:10 PM" KundId="810" Produktnr="100816" Titel="Wilson US Open 4pack tennisbollar" Betalsatt="I" DebPris="200" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/28/2013 12:10:59 PM" KundId="3052" Produktnr="222529" Titel="Nike vit t-shirt M" Betalsatt="I" DebPris="449.1" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/28/2013 12:10:59 PM" KundId="3052" Produktnr="242210" Titel="Sportartiklar" Betalsatt="I" DebPris="405" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+<Transaktion Tid="6/28/2013 12:10:59 PM" KundId="3052" Produktnr="226059" Titel="Babolat V-pro all court" Betalsatt="I" DebPris="850" Kassa="Sportartiklar" Kassakod="320" Momssats="0.8"/>
+</Transaktioner>

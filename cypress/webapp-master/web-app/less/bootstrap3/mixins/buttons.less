@@ -1,0 +1,62 @@
+//== Button variants
+//## Easily pump out default styles, as well as :hover, :focus, :active,
+//## and disabled options for all buttons
+//------------------------------------------------------------------------------
+
+.button-variant(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        color: @color;
+        background-color: darker(@background, 10%);
+        border-color: lighten(@border, 12%);
+    }
+}
+
+.button-link-variant(@color;) {
+    background-image: none !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: @color !important;
+
+    &:hover {
+        text-decoration: none;
+        color: darken(@color, 10%) !important;
+    }
+}
+
+.dropdown-toggle-dropdown-menu-variant ( @background-color; @border-color; @li-a-color; @li-a-hover-bg-color; ) {
+    background-color: @background-color;
+    border-color: @border-color;
+
+    > li > a {
+        color: @li-a-color;
+    }
+
+    > li > a:hover {
+        background-color: darken(@li-a-hover-bg-color, 8%);
+    }
+}
+
+.button-outline-variant (@color;) {
+    color: @color;
+    background-color: transparent;
+    border-color: @color;
+    .transition(all .5s);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        color: @white;
+        background-color: @color;
+        border-color: @color;
+    }
+}

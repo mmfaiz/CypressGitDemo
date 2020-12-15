@@ -1,0 +1,562 @@
+//== Schedule
+//##
+//------------------------------------------------------------------------------
+
+// Variables
+
+@table-heading-height:          30px;
+@slot-height:                   40px;
+@court-name-width:              100px;
+@court-name-max-width:          100px;
+
+//## Cursor
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+.cursor-default {
+    cursor: default !important;
+}
+
+.slot-basics {
+    border-right: @slot-border-width;
+    border-color: @slot-border-color;
+    overflow: hidden;
+    padding: @slot-padding;
+}
+
+.slot-content {
+    font-family: @font-family-sans-serif;
+    font-size: 0.9em;
+    font-weight: normal;
+    line-height: 15px;
+    .text-center;
+}
+
+.schedule {
+    background-color: @white;
+    display: block;
+    //overflow: hidden;
+    padding: 20px 30px;
+
+    .schedule-wrapper {
+        position: relative;
+
+        // DATE & SPORTS
+        .schedule-filters {
+
+            // Select date link
+            .list-date {
+
+                > li.icon {
+                    font-size: 2em;
+                    line-height: 1;
+                    vertical-align: middle;
+                }
+            }
+
+            // Select sport tabs
+            .tabs-style-underline {
+
+                nav.line {
+                    border-bottom: 3px solid #ebebeb;
+                    padding: 0 0 33px;
+
+                    .list-sports {
+                        float: left;
+                        font-size: 0.85em;
+                        height: 36px;
+
+                        li {
+                            display: inline-block;
+                            height: 36px;
+
+                            a {
+                                border: none;
+                                line-height: 1.5;
+                                padding: 0 10px;
+
+                                &::after {
+                                    height: 3px;
+                                }
+
+                                i {
+                                    font-size: 1.2em;
+                                }
+
+                                span {
+                                    padding: 0 5px 0 0;
+                                }
+                            }
+
+                            &:last-child a {
+                                border-left: none;
+                                border-right: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        table {
+            table-layout: fixed;
+        }
+
+        table.daily,
+        table.weekly {
+            border-left: medium none !important;
+            border-right: medium none !important;
+
+            thead {
+                background: @white;
+                height: @table-heading-height;
+
+                tr {
+                    height: @table-heading-height;
+                }
+
+                th {
+                    background: transparent;
+                    border: none;
+                    font-size: 1em;
+                    font-weight: normal;
+                    height: @table-heading-height;
+                    padding: 5px 0 0;
+                    text-align: center;
+                    vertical-align: bottom;
+                    white-space: nowrap;
+
+                    &.court {
+                        padding: 10px 0 5px!important;
+                        height: @table-heading-height;
+                    }
+                }
+            }
+
+            thead .court,
+            tbody .court,
+            thead .date,
+            tbody .date {
+                border-left: medium none !important;
+                color: @text-color;
+                height: @slot-height;
+                padding: 5px 10px 5px 0 !important;
+                text-align: left;
+                max-width: @court-name-max-width;
+                width: @court-name-width;
+                .ellipsis;
+
+                // Show week btn
+                a {
+                    padding: 2px;
+
+                    span.day {
+                        line-height: 0.7;
+                        display:block;
+                    }
+                }
+            }
+
+            thead .date,
+            tbody .date {
+                padding: 15px 10px 5px 0 !important;
+            }
+
+            tr.span-indicators {
+                height: 8px!important;
+
+                td {
+                    height: 8px!important;
+                    border: none;
+                    padding: 0!important;
+                }
+
+                table {
+                    width: 100%;
+                    tr { height: 4px!important; }
+                    td {
+                        width: 50%;
+                        height: 4px!important;
+                        border: none;
+
+                        &:nth-child(1) {
+                            border-right: solid 1px #ebebeb;
+                        }
+                    }
+                }
+            }
+
+            tr, td {
+                height: @slot-height;
+            }
+
+            td {
+
+                // Let the "table-bordered" class to take care of the borders
+                // Use only "border-right" to separate and match the slot-borders
+
+                // Default slot
+                &.slot {
+                    .slot-variant(@slot-default-color; @slot-default-bg; @slot-default-hover-color; @slot-default-hover-bg;);
+                    .slot-basics;
+                    .slot-content;
+                    .cursor-pointer;
+
+                    // let the bordered table take care of right borders
+                    &:last-child {
+                        border-right: medium none !important;
+                    }
+
+                    // Default slot hover behaviour
+                    &:hover {
+                        cursor: default;
+                    }
+
+                    // not available slots (most typically "time-passed" ones)
+                    &.not-available {
+                        .slot-variant(@slot-default-color; @slot-default-bg; @slot-default-hover-color; @slot-default-hover-bg;);
+                        .cursor-default;
+
+                        // Add a times icon inside
+                        &:before {
+                            color: @slot-lightgrey-bg;
+                            content: "\f00d";
+                            font-family: FontAwesome;
+                            font-style: normal;
+                            font-weight: normal;
+                            text-decoration: inherit;
+                            font-size: 1.1em;
+                        }
+                    }
+
+                    // Free slots
+                    &.free {
+                        .slot-variant(@slot-free-color; @slot-free-bg; @slot-free-hover-color; @slot-free-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                    // Booked, Training, Competition
+                    &.red {
+                        .slot-variant(@slot-red-color; @slot-red-bg; @slot-red-hover-color; @slot-red-hover-bg;);
+                        .cursor-default;
+                    }
+
+                    // Booking payed
+                    &.green {
+                        .slot-variant(@slot-green-color; @slot-green-bg; @slot-green-hover-color; @slot-green-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                    // Booking partly paid
+                    &.lightGreen {
+                        .slot-variant(@slot-lightgreen-color; @slot-lightgreen-bg; @slot-lightgreen-hover-color; @slot-lightgreen-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                    // Booking not payed
+                    &.yellow {
+                        .slot-variant(@slot-yellow-color; @slot-yellow-bg; @slot-yellow-hover-color; @slot-yellow-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                    // Activity
+                    &.purple {
+                        .slot-variant(@slot-purple-color; @slot-purple-bg; @slot-purple-hover-color; @slot-purple-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                    // Subscriptions
+                    &.blue {
+                        .slot-variant(@slot-blue-color; @slot-blue-bg; @slot-blue-hover-color; @slot-blue-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                    // Canceled Subscription
+                    &.lightBlue {
+                        .slot-variant(@slot-lightblue-color; @slot-lightblue-bg; @slot-lightblue-hover-color; @slot-lightblue-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                    // Not available
+                    &.lightGrey {
+                        .slot-variant(@slot-lightgrey-color; @slot-lightgrey-bg; @slot-lightgrey-hover-color; @slot-lightgrey-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                    &.marked {
+                        .slot-variant(@slot-marked-color; @slot-marked-bg; @slot-marked-hover-color; @slot-marked-hover-bg;);
+                        .cursor-pointer;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.schedule {
+
+    &.medium {
+
+        table td.slot .slot-info {
+            span.other {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &.small {
+
+        table td.slot .slot-info {
+
+            span {
+
+                &.comment {
+                    font-size: 10px;
+                    font-weight: normal;
+                    line-height: 12px;
+                }
+
+                &.name {
+                    font-size: 0.9em;
+                    font-weight: normal;
+                    line-height: 12px;
+                }
+
+                &.other {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .daterange {
+        padding: 8px;
+
+        span {
+            text-transform: capitalize;
+        }
+    }
+
+    .loading {
+        color: #ccc;
+        display: none;
+        margin-top: 16px;
+        padding: 5px;
+        width: 85px;
+
+        img {
+            display: inline;
+            margin-top: -2px;
+        }
+    }
+
+    table {
+
+        td {
+
+            &.slot {
+
+                &.first {
+                    border-color: @white @border-color @border-color @border-color;
+                }
+
+                &.group-ind {
+
+                    &.green {
+                        background: @slot-green-hover-bg;
+                    }
+
+                    &.lightGreen {
+                        background: @slot-lightgreen-hover-bg;
+                    }
+
+                    &.lightGrey {
+                        background: @slot-lightgrey-hover-bg;
+                    }
+
+                    &.purple {
+                        background: @slot-purple-hover-bg;
+                    }
+
+                    &.red {
+                        background: @slot-red-hover-bg;
+                    }
+
+                    &.yellow {
+                        background: @slot-yellow-hover-bg;
+                    }
+                }
+
+                &.yellow.marked,
+                &.blue.marked,
+                &.red.marked,
+                &.green.marked,
+                &.lightGreen.marked,
+                &.lightBlue.marked,
+                &.yellow.marked:hover,
+                &.blue.marked:hover,
+                &.red.marked:hover,
+                &.green.marked:hover,
+                &.lightGreen.marked:hover,
+                &.lightBlue.marked:hover {
+                    background: @slot-hover-color;
+                }
+
+                .online-status {
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-top: 8px solid #445026;
+                    width: 0;
+                    -ms-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    height: 0;
+                    -webkit-transform: rotate(-45deg);
+                    right: -5px;
+                    -o-transform: rotate(-45deg);
+                    bottom: -1px;
+                    position: absolute;
+                    transform: rotate(-45deg);
+                }
+
+
+                .slot-hero {
+                    color: #757575;
+                    font-family: 'TradeGothic';
+                    font-size: 20px;
+                    padding: 40px;
+                }
+
+                .slot-info {
+                    overflow: hidden;
+                    position: absolute;
+                    white-space: normal;
+                    width: 98%;
+
+                    span.comment {
+                        width: 98%;
+                    }
+
+                    span.name {
+                        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+
+                        &.group {
+                            font-size: 10px;
+                            font-weight: normal;
+                        }
+                    }
+
+                    span.name,
+                    span.other {
+                        -ms-text-overflow: ellipsis;
+                        -o-text-overflow: ellipsis;
+                        display: block;
+                        font-weight: bold;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        width: 100%;
+                    }
+
+                    span.other {
+                        font-size: 0.9em;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.date-navigation {
+    line-height: 22px;
+    margin-top: 5px;
+    text-align: center;
+
+    .date a {
+        color: #696969;
+        font-size: 1.7em;
+        font-weight: bold;
+        padding-top: 10px;
+        text-transform: capitalize;
+    }
+
+    .next,
+    .prev {
+        font-size: 1.4em;
+        padding  : 4px;
+    }
+
+    .week {
+        color: #a4a4a4;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    span.next i,
+    span.prev i {
+        margin-top: 2px;
+    }
+}
+
+#color-faq {
+    color: @text-muted;
+    display: block;
+    padding: 30px 0 0;
+    text-align: right;
+    width: 100%;
+
+    ul li {
+        font-size: 10px;
+        line-height: 12px;
+
+        i {
+            border: 1px solid #e9e9e9;
+            display: inline-block;
+            height: 16px;
+            margin-right: 5px;
+            width: 16px;
+
+            &.blue {
+                background-color: @slot-blue-bg;
+            }
+
+            &.green {
+                background-color: @slot-green-bg;
+            }
+
+            &.grey {
+                background-color: @slot-marked-color;
+            }
+
+            &.lightBlue {
+                background-color: @slot-lightblue-bg;
+            }
+
+            &.lightGreen {
+                background-color: @slot-lightgreen-bg;
+            }
+
+            &.lightGrey {
+                background-color: @slot-lightgrey-bg;
+            }
+
+            &.purple {
+                background-color: @slot-purple-bg;
+            }
+
+            &.red {
+                background-color: @slot-red-bg;
+            }
+
+            &.yellow {
+                background-color: @slot-yellow-bg;
+            }
+
+            &.white {
+                background-color: @slot-free-bg;
+            }
+        }
+    }
+}

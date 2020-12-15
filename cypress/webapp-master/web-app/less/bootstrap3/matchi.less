@@ -1,0 +1,498 @@
+//*****************************************************************************
+// Matchi
+//------------------------------------------------------------------------------
+// Project: Matchi.se
+// Author: OzcarStormer
+//
+// Version: 1.0
+//*****************************************************************************
+
+// Import fonts from Google.
+// @import url('//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500italic,500,700,700italic,900,900italic');
+// @import url('//fonts.googleapis.com/css?family=Roboto+Slab');
+// @import url('//fonts.googleapis.com/css?family=Belgrano');
+
+// Glyphicons
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
+
+// Load Bootstrap first
+@import "../../bootstrap3/less/bootstrap.less";
+
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+// Core CSS
+@import "scaffolding.less";
+@import "layout.less";
+@import "type.less";
+@import "tables.less";
+@import "forms.less";
+@import "checkbox-radio.less";
+@import "buttons.less";
+
+// Components
+@import "dropdowns.less";
+@import "navs.less";
+@import "navbar.less";
+@import "breadcrumbs.less";
+@import "pagination.less";
+@import "pager.less";
+@import "labels.less";
+@import "badges.less";
+@import "alerts.less";
+@import "lists.less";
+@import "list-group.less";
+@import "tabs.less";
+@import "media.less";
+@import "wells.less";
+@import "panels.less";
+@import "league.less";
+
+// Components w/ JavaScript
+@import "modals.less";
+@import "popovers.less";
+@import "carousel.less";
+
+// Matchi components
+@import "maps.less";
+@import "user.less";
+@import "facility.less";
+@import "schedule.less";
+@import "notifications.less";
+@import "animate.less";
+
+// Plugin overrides
+@import "plugins/jquery-ui.less";
+@import "plugins/ui-datepicker.less";
+@import "plugins/select2.less";
+@import "plugins/bootstrap-select.less";
+@import "plugins/bootstrap-progressbar";
+@import "plugins/bootstrap-slider.less";
+@import "plugins/bootstrap-datepicker.less";
+@import "plugins/chartist.less";
+@import "plugins/pick-a-color.less";
+
+// View-specific styles
+@import "views.less";
+
+// Responsive
+@import "responsive.less";
+
+// MATCHi Components
+// -------------------------
+
+.logo-2019 {
+    overflow: hidden;
+    display: inline-block;
+    content: url("/images/logo-2019.svg");
+    background-size: contain;
+    height: 20px;
+    text-indent: -9999px;
+
+    span {
+        display: none;
+    }
+}
+
+.svg-logo {
+
+    &.matchi-green {
+        color: @brand-color;
+    }
+}
+
+.ellipsis {
+    -moz-binding: url("/xml/ellipsis.xml#ellipsis");
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+
+    &.separate {
+        justify-content: space-between;
+    }
+
+    &.wrap { 
+        flex-wrap: wrap;
+    }
+}
+
+.no-visibility {
+    visibility: hidden;
+
+    .no-shrink {
+        flex-shrink: 0;
+    }
+
+    &:not(.row) {
+        margin-left: 0;
+        margin-right: 0;
+        & > [class|='col'] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.break-word {
+    word-break: break-word;
+}
+
+.splash-page .splash {
+    margin: 0;
+
+    .splash-inner {
+        padding: calc(@navbar-height + 40px) 0 40px;
+
+        @media (max-width: @screen-sm-max) {
+            & {
+                //padding: calc(@navbar-height + 10px) 0 10px;
+            }
+        }
+    }
+
+    &.start {
+        background-image: url("/images/intro-tennis-2.jpg");
+        background-position: center center;
+        // background: url("http://image.shutterstock.com/display_pic_with_logo/57428/184260629/stock-photo-tennis-ball-backlit-by-a-warm-sun-184260629.jpg");
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+
+        .splash-inner {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 50%, rgba(255,255,255,0.35) 100%);
+            padding: calc(@navbar-height + 40px) 0 100px;
+            @media (max-width: @screen-sm-max) {
+                padding: calc(@navbar-height + 20px) 0 30px;
+            }
+            @media (max-width: @screen-xs-max) {
+                & {
+                    padding: @navbar-height 0 0;
+                }
+            }
+        }
+    }
+
+    &.promo {
+        background-image: url("/images/promo_bg.jpg");
+        background-image: url("/images/promo_bg.jpg");
+        background-position: center center;
+        //background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    &.about {
+        background-image: url("/images/promo_bg_players.jpg");
+        background-position: center center;
+        //background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    &.facility {
+        padding: 0;
+        background-image: url("/images/facility_top_bg.jpg");
+        background-position: center center;
+        //background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    &.user {
+        // background: url("/images/promo_bg.jpg");
+        background-image: url("/images/promo_bg_dashboard.jpg");
+        background-position: center center;
+        //background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    &.dashboard-top-wrapper {
+        background-image: url("/images/intro-tennis-2.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        min-height: 280px;
+
+        .splash-inner {
+            padding: @navbar-height 0 0;
+        }
+
+        .dashboard-top-content {
+            padding: 40px 0;
+            background: rgba(@brand-color, 0.8);
+        }
+    }
+
+
+    &.welcome-wrapper {
+        height: 470px;
+
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-position: center center;
+
+        @media (max-width: @screen-sm-max) {
+
+            & {
+                height: 370px;
+            }
+        }
+
+        @media (max-width: @screen-xs-max) {
+            & {
+                height: 290px;
+            }
+        }
+
+        margin-bottom: -70px;
+    }
+
+    .btn {
+        text-shadow: none;
+    }
+
+    .stripe {
+        padding: 60px 0;
+
+        @media (max-width: @screen-xs-max) {
+            & {
+                padding: 0;
+            }
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        h1,
+        h2,
+        p {
+            color: @white;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .well {
+        background: rgba(0, 0, 0, 0.2);
+        border: 4px solid rgba(0, 0, 0, 0.35);
+    }
+
+    form {
+        background: rgba(255,255,255,0.8);
+        border: 1px solid rgba(0,0,0,0.2);
+        float: left;
+        line-height: 1.2;
+        margin: 0 !important;
+        padding: 4px;
+        width: 100%;
+
+        input,
+        select,
+        button,
+        .bootstrap-select {
+            height: 45px;
+            width: 100% !important;
+        }
+    }
+}
+
+a, button, .btn {
+    font-family: @font-family-clickable;
+}
+
+
+// Plugin overrides
+// -------------------------
+
+// Whats this?
+.chzn-container {
+    display: block;
+
+    .chzn-choices {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        background-image: none;
+        box-shadow: none;
+        color: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+
+        .no-radius;
+        .search-field input {
+            height: auto;
+        }
+    }
+}
+
+// Whats this?
+.circle-info, .circle-info-half {
+    color: #999;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+// Whats this?
+.entity-list-item {
+    background-color: @list-entity-default-bg;
+    border-bottom: 1px solid @border-color;
+    color: inherit;
+    display: block;
+
+    &.alter {
+        background-color: @list-entity-alter-bg;
+    }
+
+    &:hover {
+        background-color: @list-entity-hover-bg;
+        color: inherit;
+    }
+
+    .row {
+        padding: 20px 0 14px;
+    }
+}
+
+// Whats this?
+.user-entity-list {
+
+    .list-group-item {
+        border: 0;
+        padding-bottom: 10px;
+        padding-top: 10px;
+
+        &:not(:first-child) {
+            border-top: 1px solid @border-color;
+        }
+    }
+
+    a {
+        color: @link-color;
+    }
+}
+
+// Whats this?
+#matchi-value {
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+// MOVE TO "views/user-profile.less" or is it Facility ?
+.select-availability {
+    &.disabled {
+        .timeLabel,
+        .timeFilter {
+            .opacity(.3);
+        }
+    }
+
+    &.facility > .ui-slider-horizontal {
+        width: 65%;
+    }
+}
+
+.condition {
+    .entry {
+        display: list-item;
+        float: none !important;
+        margin-left: 40px;
+
+        .header {
+            color: @text-muted;
+            display: inline;
+
+            &::after {
+              content: ":";
+            }
+        }
+
+        .details {
+            display: inline;
+        }
+    }
+}
+
+.condition + .condition {
+    margin-top: 15px;
+}
+
+input + .player-price {
+    margin-top: 5px;
+}
+
+.popover.modal-popover {
+    color: #333;
+    max-width: none;
+    width: 100%;
+
+    .popover-content {
+        font-size: 14px;
+        height: 250px;
+        overflow-y: auto;
+
+        h1, h2, h3 {
+            margin: 15px 0 10px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+    }
+}
+
+.collapsable-text {
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+
+    .show-more-button {
+        color: @brand-color;
+        position: absolute;
+        right: 0;
+        background-image: linear-gradient(to right, rgba(255,255,255,0) , rgba(255,255,255,1) 50%);
+        cursor: pointer;
+        padding-left: 80px;
+    }
+
+    &:not(.open) * {
+
+    }
+    &.open {
+        overflow: unset;
+        white-space: normal;
+        height: auto;
+
+        .show-more-button {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,159 @@
+@media print {
+
+    /*
+        Bookings (List view)
+    */
+
+    .booking-list {
+        padding-bottom: 60px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #696969;
+        text-decoration: underline;
+        text-transform: capitalize;
+    }
+    .booking-list td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+    }
+    .booking-list td.paymentstatus {
+        width: 10px;
+        height: 10px;
+        font-size: 0.4em;
+    }
+    .booking-list td.paymentstatus.OK:before {
+        content: "v";
+    }
+    .booking-list td.status {
+        display: none;
+    }
+    .booking-list td.time {
+        width: 90px;
+        max-width: 90px;
+        min-width: 90px;
+        text-align: left;
+    }
+    .booking-list td.courtname {
+        width: 100px;
+        max-width: 100px;
+        min-width: 100px;
+        text-align: left;
+        color: gray;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    .booking-list td.booking.name {
+        width: 120px;
+        max-width: 120px;
+        min-width: 120px;
+        text-align: left;
+        text-transform: capitalize;
+    }
+    .booking-list td.comment {
+        text-align: left;
+        color: #a3a3a3;
+        font-style: italic;
+        width: 210px;
+        max-width: 210px;
+        min-width: 210px;
+        text-transform: capitalize;
+    }
+
+    /*
+        Booking schedule (Table view)
+    */
+
+    div#header {
+        display: none;
+    }
+
+    div#footer {
+        display: none;
+    }
+
+    div#colorFAQ {
+        display: none;
+    }
+
+    .noprint {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .date-navigation {
+        font-size: 2em;
+    }
+
+    #facility-schedule table {
+        border: 1px solid #000;
+    }
+
+    #facility-schedule table td {
+        border: 1px solid #000;
+    }
+
+    .schedule table td {
+        height: 22px;
+        font-weight: normal !important;
+    }
+    .schedule table th {
+        height: 22px;
+    }
+
+    .schedule table td.slot {
+        border: 1px solid;
+        border-color: #fff #ccc #ccc #fff;
+        background-color: #f7f7f7;
+        overflow: hidden;
+        line-height: 15px;
+        position: relative;
+        padding: 2px 3px;
+    }
+
+    .schedule table td.slot.marked {
+        background-color: #dddddd;
+    }
+
+    .schedule table td.slot.marked:hover {
+        background-color: #dddddd;
+    }
+
+    .schedule table td.slot .slot-info {
+        overflow: hidden;
+        white-space: normal;
+        position: absolute;
+        width: 98%;
+    }
+
+    .schedule table td.slot .slot-info span.comment {
+        width: 98%;
+    }
+
+    .schedule table td.slot .slot-info span.name,
+    .schedule table td.slot .slot-info span.other {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+    }
+
+    .tooltip {
+        display: none !important;
+    }
+
+    .urp-no-hide {
+        display: none !important;
+    }
+
+
+}

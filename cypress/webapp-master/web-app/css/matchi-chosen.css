@@ -1,0 +1,32 @@
+.chzn-container-multi .chzn-choices {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+
+.chzn-container-active .chzn-choices {
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+}
+
+.chzn-container-multi .chzn-choices .search-choice {
+    background-color: #82ab12;
+    background-image: -moz-linear-gradient(top, #abc73e, #82ab12);
+    background-image: -ms-linear-gradient(top, #abc73e, #82ab12);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#abc73e), to(#82ab12));
+    background-image: -webkit-linear-gradient(top, #abc73e, #82ab12);
+    background-image: -o-linear-gradient(top, #abc73e, #82ab12);
+    background-image: linear-gradient(top, #abc73e, #82ab12);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#abc73e', endColorstr='#51a351', GradientType=0);
+    border-color: #51A351 #51A351 #387038;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}

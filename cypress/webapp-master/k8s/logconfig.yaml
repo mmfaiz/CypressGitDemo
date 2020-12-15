@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webapp-logging-config
+data:
+  logging-config.groovy: |
+    log4j.external = {
+      info "com.matchi.integration.events"
+      info 'grails.app'
+      //info 'grails.app.services.com.matchi'
+      //info 'grails.app.taglib.com.matchi'
+      //info 'grails.app.controllers.com.matchi'
+      //info 'grails.app.domain.com.matchi'
+      info 'grails.app.jobs.com.matchi'
+      //info 'javamelody'
+      //info "grails.app.utils"
+      //info 'com.matchi'
+      //debug "org.hibernate.SQL"
+      //debug "org.hibernate.cache"
+      //debug "org.ehcache"
+      //debug "org.jgroups"
+      //debug "org.jgroups.ping.kube"
+      //debug "net.sf.ehcache.distribution.jgroups"
+      fatal "net.sf.ehcache.distribution.jgroups.JGroupsCachePeer"
+    }

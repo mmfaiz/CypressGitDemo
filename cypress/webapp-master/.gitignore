@@ -1,0 +1,13 @@
+.DS_Store
+*.project
+.settings
+.idea
+*.iml
+**/target/
+.classpath
+out/
+import-matchi*
+.slcache
+node_modules
+package-lock.json
+k8s/local.sh

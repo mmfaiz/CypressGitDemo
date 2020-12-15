@@ -1,0 +1,6 @@
+#
+# messages_no.i18n
+# Client-side i18n, Norwegian messages.
+#
+
+@import _messages

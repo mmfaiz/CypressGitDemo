@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: webapp-configuration
+data:
+  DB_URL: 'jdbc:mysql://mysql:3306/matchi?characterEncoding=UTF-8&useSSL=false'
+  DB_USER: 'matchi'
+  DB_PASSWORD: 'matchi'
+  REDIS_HOST: 'redis-master'
+  REDIS_PORT: '6379'
+  FORTNOX_API_V3_CLIENTSECRET: '8NR3eUhNlc'
+  FORTNOX_API_V3_CLIENTID: 'kHuYBB5Bmv5P'
+  FORTNOX_API_V3_ACCESSTOKEN: '86326809-9c41-d8e1-805f-c12702411992'
+  FORTNOX_API_V3_OVERRIDE_ACCESSTOKEN: '50f52471-aeea-49c5-a261-21beffd7d51a'
+  GRAILS_SERVER_URL: 'http://matchi.local'

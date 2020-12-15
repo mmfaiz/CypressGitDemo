@@ -1,0 +1,63 @@
+steps:
+  - label: ':package: build'
+    command: "build"
+    plugins:
+      - docker#v3.3.0:
+          image: buildtool/build-tools
+          environment:
+            - "BUILDTOOLS_CONTENT"
+            - "KUBECONFIG_CONTENT_BASE64"
+          always-pull: true
+          volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+          propagate-environment: true
+
+  - wait: ~
+
+  - label: ':whale: push image'
+    command:  "push"
+    plugins:
+      - docker#v3.3.0:
+          environment:
+            - "BUILDTOOLS_CONTENT"
+            - "KUBECONFIG_CONTENT_BASE64"
+          image: buildtool/build-tools
+          volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+          propagate-environment: true
+
+  - wait: ~
+
+  - label: ':shipit: Deploy test'
+    command: 'deploy --timeout=7m --namespace webapp test'
+    branches: "master"
+    plugins:
+      - docker#v3.3.0:
+          environment:
+            - "BUILDTOOLS_CONTENT"
+            - "KUBECONFIG_CONTENT_BASE64"
+          image: buildtool/build-tools
+          volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+          propagate-environment: true
+
+  - wait: ~
+
+  - block: ":rocket: Release PROD"
+    branches: "master"
+
+  - label: ':shipit: Deploy prod'
+    command: 'deploy --timeout=7m --namespace webapp prod'
+    branches: "master"
+    plugins:
+      - docker#v3.3.0:
+          environment:
+            - "BUILDTOOLS_CONTENT"
+            - "KUBECONFIG_CONTENT_BASE64"
+          image: buildtool/build-tools
+          volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+          propagate-environment: true
+
+notify:
+  - slack: "#alerts-buildkite"

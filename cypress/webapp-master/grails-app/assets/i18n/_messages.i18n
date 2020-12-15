@@ -1,0 +1,34 @@
+#
+# _messages.i18n
+# List of message codes that should be available on client-side.
+#
+
+# Add your messages codes here:
+js.search.customer
+js.search.customer.minimum1
+js.search.customer.minimum2
+js.search.user
+js.customers.marked1
+js.customers.marked2
+js.customers.marked3
+js.customers.marked.all
+js.customers.marked.all.end
+js.customers.marked.all.undo
+js.selectall.customers
+js.selectall.members
+js.customers.nomatches
+js.customers.searching
+sport.name.1
+sport.name.2
+sport.name.3
+sport.name.4
+sport.name.5
+sport.name.6
+sport.name.7
+sport.name.8
+sport.name.9
+sport.name.10
+sport.name.11
+sport.name.12
+sport.name.13
+sport.name.14

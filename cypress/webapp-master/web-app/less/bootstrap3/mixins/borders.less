@@ -1,0 +1,92 @@
+//== Borders
+//##
+//------------------------------------------------------------------------------
+
+//** Define borders
+@border: 1px solid @border-color;
+
+//** Remove all borders
+.no-border { border: none !important; }
+
+//** Remove right and left borders
+.no-horizontal-borders {
+    border-right: none !important;
+    border-left: none !important;
+}
+
+//** Top & Bottom borders
+.top-border { border-top: @border !important;}
+.bottom-border { border-bottom: @border !important;}
+
+.bottom-border-3 {
+    &-success {
+        border-bottom: 3px solid @brand-color !important;;
+    }
+    &-danger {
+        border-bottom: 3px solid @brand-danger !important;;
+    }
+    &-info {
+        border-bottom: 3px solid @brand-info !important;;
+    }
+    &-warning {
+        border-bottom: 3px solid @brand-warning !important;;
+    }
+    &-inverse {
+        border-bottom: 3px solid @grey-darker !important;;
+    }
+}
+
+//== Border-radius
+//## Custom border-raduis mixins.
+//------------------------------------------------------------------------------
+
+//** Define default border-radius
+@radius: 5px;
+
+.no-radius {
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+}
+
+//** Add default border-radius
+.border-radius {
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    border-radius: @radius;
+}
+
+//** Add default border-radius ALIAS
+.rounded-corners {
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    border-radius: @radius;
+}
+
+//** Add default border-radius to top left corner
+.border-radius-top-left {
+    -moz-border-top-left-radius: @radius;
+    -webkit-border-top-left-radius: @radius;
+    border-top-left-radius: @radius;
+}
+
+//** Add default border-radius to top right corner
+.border-radius-top-right {
+    -moz-border-top-right-radius: @radius;
+    -webkit-border-top-right-radius: @radius;
+    border-top-right-radius: @radius;
+}
+
+//** Add default border-radius to bottom right corner
+.border-radius-bottom-right {
+    -moz-border-bottom-right-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    border-bottom-right-radius: @radius;
+}
+
+//** Add default border-radius to bottom left corner
+.border-radius-bottom-left {
+    -moz-border-bottom-left-radius: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+    border-bottom-left-radius: @radius;
+}

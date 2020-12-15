@@ -1,0 +1,110 @@
+//== Tabs
+//## Tab navigation styles
+//------------------------------------------------------------------------------
+
+.tabs-style-underline {
+
+    nav {
+        background: none repeat scroll 0 0 @white;
+
+        a {
+            overflow: inherit !important;
+            padding: 8px 0 5px;
+            transition: color 0.2s ease 0s;
+
+            span {
+                font-weight: 400;
+            }
+        }
+
+        li a {
+            color: @text-muted;
+
+            &:hover {
+                color: @brand-color;
+                text-decoration: none;
+
+                &:after {
+                    background: none repeat scroll 0 0 @brand-color;
+                    bottom: 0;
+                    content: "";
+                    height: 6px;
+                    left: 0;
+                    position: absolute;
+                    transform: translate3d(0px, 0%, 0px);
+                    transition: transform 0.3s ease 0s;
+                    width: 100%;
+                }
+            }
+            &:after {
+                transform: translate3d(0px, 150%, 0px);
+            }
+
+            span {
+
+                small {
+                    display: inline;
+                }
+            }
+        }
+
+        li.tab-current a:after {
+            background: none repeat scroll 0 0 @brand-color;
+            bottom: 0;
+            content: "";
+            height: 6px;
+            left: 0;
+            position: absolute;
+            transform: translate3d(0px, 150%, 0px);
+            transition: transform 0.3s ease 0s;
+            width: 100%;
+        }
+
+        li.tab-current a:after {
+            transform: translate3d(0px, 0px, 0px);
+        }
+
+        li.tab-current {
+
+            a {
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.tabs-sports {
+
+    nav {
+
+        a {
+            display: inline-block !important;
+            position: static !important;
+        }
+
+        ul {
+
+            li {
+                display: -webkit-flex; // Safari
+                flex: none !important;
+                -ms-flex: none !important;
+                -webkit-flex: none !important;
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-sm-max) {
+    .tabs-style-underline {
+        nav {
+            a {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}

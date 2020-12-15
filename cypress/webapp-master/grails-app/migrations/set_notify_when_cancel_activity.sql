@@ -1,0 +1,1 @@
+update activity set notify_when_cancel = true where email is not null;

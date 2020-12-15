@@ -5,17 +5,17 @@
   "main": "index.js",
   "scripts": {
 
+    
     "cypress:open": "./node_modules/.bin/cypress open",
     "foo": "echo foo",
     "test": "cypress open",
     "record": "cypress run --record --key dd77319a-4a8a-4032-894e-0b4fddfb58ca"
-
   },
   "author": "faiz",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^5.6.0"
+    "cypress": "^5.6.0",
+    "cypress-xpath": "^1.6.1"
   },
-  
   "dependencies": {}
 }

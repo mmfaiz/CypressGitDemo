@@ -1,0 +1,174 @@
+//== Alerts
+//##
+//------------------------------------------------------------------------------
+
+.alert:not(.no-alert-style) {
+    font-size: @font-size-base;
+
+    a,
+    .alert-link {
+        font-weight: normal;
+        // color: @white;
+        text-decoration: underline;
+    }
+    a.btn {
+        text-decoration: none;
+    }
+}
+
+@notification-bg-color: @white;
+
+.alert-notification {
+    background-color: @notification-bg-color;
+    border: none;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+    .animated;
+    .fadeInDown;
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-duration: 2s;
+
+    .notification-content {
+        width: 100%;
+
+        .notification-icon {
+            background-color: darken(@notification-bg-color, 5%);
+            color: @brand-color;
+            font-size: 3em;
+            padding: 0 20px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .notification-message {
+            background-color: lighten(@notification-bg-color, 5%);
+            border-left: 1px solid @grey-lighter;
+            border-bottom: 1px solid @grey-lighter;
+            color: darken(@brand-color, 10%);
+            padding: 5px 30px;
+
+            ul {
+                padding: 0;
+            }
+        }
+
+        .notification-close {
+            background-color: lighten(@notification-bg-color, 5%);
+            border-bottom: 1px solid @grey-lighter;
+            button.close {
+                right: 20px;
+            }
+        }
+    }
+
+    &.danger {
+        background-color: lighten(@brand-danger, 30%);
+
+        .notification-icon {
+            background-color: lighten(@brand-danger, 25%);
+            color: darken(@brand-danger, 10%);
+        }
+
+        .notification-message {
+            border-left: 1px solid lighten(@brand-danger, 20%);
+            color: darken(@brand-danger, 10%);
+        }
+    }
+}
+
+@media (max-width: @screen-xs-min) {
+    .notification-content {
+
+        button.close {
+            margin-top: 15px !important;
+        }
+
+        .notification-icon {
+            background-color: transparent !important;
+            border-right: none !important;
+            font-size: 2em !important;
+            float: left;
+            margin-right: 5%;
+            padding: 5px 10px !important;
+            position: relative;
+            width:10% !important;
+        }
+        .notification-message {
+            float: left;
+            padding: 5px !important;
+            margin-left: 5%;
+            position: relative;
+            width:60% !important;
+        }
+    }
+
+}
+
+.modal-body {
+
+    .alert-notification {
+        display: block;
+        margin: -20px -20px 10px;
+        width: auto;
+
+        &.alert-info {
+            background-color: @state-info-bg;
+            color: @state-info-text;
+
+            .notification-content {
+
+                .notification-icon {
+                    background-color: darken(@state-info-bg, 10%);
+                    color: @state-info-text;
+                }
+
+                .notification-message {
+                    color: @state-info-text;
+                }
+            }
+        }
+
+        &.alert-danger {
+            background-color: @state-danger-bg;
+            color: @state-danger-text;
+
+            .notification-content {
+
+                .notification-icon {
+                    background-color: darken(@state-danger-bg, 10%);
+                    color: @state-danger-text;
+                }
+
+                .notification-message {
+                    color: @state-danger-text;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+
+    .modal-body .alert-notification {
+        width: @modal-md;
+    }
+
+    // Modal sizes
+    .modal-sm {
+
+        .modal-body .alert-notification {
+            width: @modal-sm;
+        }
+    }
+}
+
+@media (min-width: @screen-md-min) {
+
+    .modal-lg {
+
+        .modal-body .alert-notification {
+            width: @modal-lg;
+        }
+    }
+}

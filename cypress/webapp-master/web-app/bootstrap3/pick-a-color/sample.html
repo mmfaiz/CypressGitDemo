@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta http-equiv="x-ua-compatible" content="IE=10">
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="pick-a-color-1.2.3.min.css">
+
+		<style type="text/css">
+
+			.pick-a-color-markup {
+				margin:20px 0px;
+			}
+
+			.container {
+				margin: 0px 5px;
+				width: 50%;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="container">
+			<input type="text" value="eaf725" name="border-color" class="pick-a-color form-control">
+			<input type="text" value="eaf725" name="font-color" class="pick-a-color form-control">
+			<input type="text" value="eaf725" name="backgound-color" class="pick-a-color form-control">
+			<input type="text" value="eaf725" name="highlight-color" class="pick-a-color form-control">
+			<input type="text" value="eaf725" name="contrast-color" class="pick-a-color form-control">
+			<input type="text" value="eaf725" class="pick-a-color form-control" disabled>
+			<input type="text" value="eaf725" class="pick-a-color form-control">
+		</div>
+
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="tinycolor-0.9.15.min.js"></script>
+	<script src="pick-a-color-1.2.3.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$(".pick-a-color").pickAColor({
+				showSpectrum: false,
+	            showSavedColors: false,
+	            saveColorsPerElement: false,
+	            fadeMenuToggle: true,
+	            showAdvanced: false,
+	            showBasicColors: false,
+	            showHexInput: false,
+	            allowBlank: false,
+	            inlineDropdown: true,
+				basicColors: {
+	                yellow: 'eaf725',
+	                yelloworange: 'ffd011',
+	                orange: 'f39c12',
+	                redorange: 'f36812',
+	                red: 'ff3333',
+	                redpurple: 'aa0044',
+	                purple: 'aa0077',
+	                bluepurple: '8833dd',
+	                blue: '19b5fe',
+	                bluegreen: '19dbfe',
+	                green: '85b20b',
+	                greenyellow: 'b3e822'
+	            }
+			});
+
+		});
+
+		</script>
+
+	</body>
+
+</html>

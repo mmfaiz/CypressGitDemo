@@ -1,0 +1,6 @@
+#
+# messages_es.i18n
+# Client-side i18n, Spanish messages.
+#
+
+@import _messages

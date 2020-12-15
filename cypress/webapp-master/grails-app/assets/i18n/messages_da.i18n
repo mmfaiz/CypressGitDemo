@@ -1,0 +1,6 @@
+#
+# messages_da.i18n
+# Client-side i18n, Danish messages.
+#
+
+@import _messages

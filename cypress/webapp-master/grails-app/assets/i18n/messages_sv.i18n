@@ -1,0 +1,6 @@
+#
+# messages_sv.i18n
+# Client-side i18n, Swedish messages.
+#
+
+@import _messages

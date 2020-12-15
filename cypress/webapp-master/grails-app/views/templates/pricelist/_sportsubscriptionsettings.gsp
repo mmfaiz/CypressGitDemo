@@ -1,0 +1,2 @@
+(<g:if test="${priceList?.sport?.name}"><g:message code="sport.name.${priceList?.sport?.id}"/></g:if><g:else><g:message code="facilityPriceList.index.message8" /></g:else>,
+<g:if test="${priceList?.subscriptions}"><g:message code="subscription.label" /></g:if><g:else><g:message code="facilityPriceList.index.message16" /></g:else>)
