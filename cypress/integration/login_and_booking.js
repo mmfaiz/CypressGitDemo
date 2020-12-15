@@ -14,16 +14,14 @@ describe('Matchi AB Automation Testing ', function() {
         //Visit the Matchi AB  Website
         cy.visit('/');
         cy.get('a').then(link => {cy.request(link.prop('href')).its('status').should('eq', 200);});
-          
         // Navigating to "login"
       cy.get('.navbar-right > :nth-child(2) > a > span').click()   
       cy.get('#username').type('abc002@gmail.com')
       cy.get("#password").type('1234567')
-      cy.get('#loginForm > .checkbox > label').click()      
+      cy.get('#loginForm > .checkbox > label').click()     
       cy.get('#loginForm > .btn').click()    
     })
     
-
     it('Book first available time slots using Saved Card', function() {  
       cy.get('.col-sm-4 > :nth-child(4) > .btn').click() // click on booking tab
       // select indoor game
@@ -42,26 +40,19 @@ describe('Matchi AB Automation Testing ', function() {
       cy.get('.slot.free').first().click({force: true}  )
      
       cy.get('.payment-method > .radio > label')
-    
-     //cy.get('select').eq(1).select('e4ea4f2075bc03f00175bc04d1500e65').should('have.value', 'e4ea4f2075bc03f00175bc04d1500e65')
-     
-      //cy.get('.col-sm-8 > :nth-child(1) > .radio > label').click({ force: true}) // payment method
-      
-      
+      //cy.get('select').eq(1).select('e4ea4f2075bc03f00175bc04d1500e65').should('have.value', 'e4ea4f2075bc03f00175bc04d1500e65')
+     //cy.get('.col-sm-8 > :nth-child(1) > .radio > label').click({ force: true}) // payment method
       cy.get('#btnSubmit').click() // submit payment
       cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click() // finish booking
-  
   })
   
   /* 
   it('Book first available time slots using Gift Card', function() {
-    
-    cy.get('.navbar-left > :nth-child(2) > a > span').click({force: true})// click on booking tab
-  
-     // cy.get('.col-sm-4 > :nth-child(4) > .btn').click() // click on booking tab
+     cy.get('.navbar-left > :nth-child(2) > a > span').click({force: true})// click on booking tab
+  // cy.get('.col-sm-4 > :nth-child(4) > .btn').click() // click on booking tab
   // select indoor game
       cy.get(':nth-child(1) > .form-group > .btn-group > .btn > .filter-option').click({force: true})
-      .get(':nth-child(1) > .form-group > .btn-group > .open > .dropdown-menu > [data-original-index="1"] > a > .text').click({force: true})
+        .get(':nth-child(1) > .form-group > .btn-group > .open > .dropdown-menu > [data-original-index="1"] > a > .text').click({force: true})
       //cy.get('#inOutCourt').select('Indoors',{ force: true }) // select in or out doors courts 
   
       // select sport
@@ -72,7 +63,7 @@ describe('Matchi AB Automation Testing ', function() {
       cy.get('.col-sm-2 > .btn').click() // click smash      
       
       cy.get('li').first().click({force: true})
-      cy.get('.slot.free').first().click({force: true}  )
+      cy.get('.slot.free').first().click({force: true}  )  
    
     //cy.get('.payment-method > .radio > label')
     cy.get('.col-sm-8 > :nth-child(4) > .radio > label').click({ force: true}) // payment with gift card
@@ -81,7 +72,6 @@ describe('Matchi AB Automation Testing ', function() {
        
      cy.get('#btnSubmit').click() // submit payment
     cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click() // finish booking
-
   })
 
  it('Booking first available slot with new Bank Details', function() {
@@ -150,18 +140,14 @@ describe('Matchi AB Automation Testing ', function() {
     cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer > .btn').click() // finish booking                     
   })
   
-  
-  it('Show all my booking and cancel first one', function() {
-    
+ it('Show all my booking and cancel first one', functizzzon() {    
     cy.get(':nth-child(3) > .dropdown-toggle > :nth-child(1)').click()
       .get('a[href*="bookings"]').contains('Show all my bookings').click({ force: true }) // SHow all bookings
     
       cy.get(':nth-child(1) > .text-right > .btn').click({force:true})
       cy.get('.btn-rnd.btn-danger').click()
-      //cy.get('#cancelCloseBtn').click()
-   
+      //cy.get('#cancelCloseBtn').click()  
   })
-
   */
 
 it('Go to Profile setting and change it', function() {
@@ -187,6 +173,4 @@ it('Go to Profile setting and change it', function() {
       //cy.get('a[href="https://jobs.matchi.se/"]').should('have.attr', 'target', '_blank').click()
       cy.get(':nth-child(3) > .partner > .center-text > .img-responsive').click()
       cy.get(':nth-child(4) > .partner > .center-text > .img-responsive').click()
-
-  })
 })
