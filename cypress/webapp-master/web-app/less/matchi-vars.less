@@ -1,0 +1,200 @@
+// Vars
+// -------------------------
+@contentContainerBackground: #f6f6f6;
+
+// Schedule slot colors
+// Training, Competition
+@slotRedBg: #dba8ad;
+@slotRedTextColor: #4e2e2c;
+@slotRedHoverBg: #c68c96;
+// Booking payed
+@slotGreenBg: #b9cf96;
+@slotGreenTextColor: #445026;
+@slotGreenHoverBg: #a5bc86;
+// Booking partly paid
+@slotLightGreenBg: #dbe5c2;
+@slotLightGreenTextColor: #445026;
+@slotLightGreenHoverBg: #cbcda3;
+// Booking not payed
+@slotYellowBg: #e6e789;
+@slotYellowTextColor: #5b5618;
+@slotYellowHoverBg: #d0d277;
+// Activity
+@slotPurpleBg: #c7b2d6;
+@slotPurpleTextColor: #3e015c;
+@slotPurpleHoverBg: #bea1c6;
+// Subscription
+@slotBlueBg: #6eb4cd;
+@slotBlueTextColor: #003050;
+@slotBlueHoverBg: #4d9dbb;
+// Canceled Subscription
+@slotLightBlueBg: #cee5ec;
+@slotLightBlueTextColor: #2a4662;
+@slotLightBlueHoverBg: #bdd4da;
+// Not available
+@slotLightGreyBg: #e9e9e9;
+@slotLightGreyTextColor: #4e4e4e;
+@slotLightGreyHoverBg: #d0d0d0;
+//Hover and mark
+@slotMarkedColor: #c2c2c2;
+@slotHoverColor: #e2e2e2;
+
+//Navigation bar colors
+@navbarAdminText:                      #ffffff;
+@navbarAdminLinkColor:                 #ffffff;
+@navbarAdminLinkColorHover:            #ffffff;
+@navbarAdminLinkColorActive:           #ffffff;
+@navbarAdminLinkBackgroundHover:       transparent;
+@navbarAdminLinkBackgroundActive:      #777777;
+
+@navbarAdminBackground:                #000000;
+@navbarAdminBackgroundStartColor:      #000000;
+@navbarAdminBackgroundEndColor:        #333333;
+@navbarAdminBackgroundHighlight:       #777777;
+
+
+// Mixins
+// -------------------------
+.border-radius (@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -khtml-border-radius: @radius;
+  border-radius: @radius;
+}
+// -------------------------
+.rounded-corners (@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -khtml-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.space (@space: 5px) {
+  height: @space;
+  font-size: @space;
+  line-height: @space;
+}
+.space5 { .space; }
+.space10 { .space(10px); }
+.space15 { .space(15px); }
+.space17 { .space(17px); }
+.space20 { .space(20px); }
+.space30 { .space(30px); }
+.space40 { .space(40px); }
+.space60 { .space(60px); }
+.space80 { .space(80px); }
+.space100 { .space(100px); }
+
+// Paddings
+// -------------------------
+.padding (@padding: 5px) {
+  padding: @padding;
+}
+.padding5 { .padding; }
+.padding10 { .padding(10px); }
+.padding15 { .padding(15px); }
+.padding20 { .padding(20px); }
+
+.vertical-padding (@padding: 5px) {
+  padding-top: @padding!important;
+  padding-bottom: @padding!important;
+}
+.vertical-padding5 { .vertical-padding; }
+.vertical-padding10 { .vertical-padding(10px); }
+.vertical-padding15 { .vertical-padding(15px); }
+.vertical-padding20 { .vertical-padding(20px); }
+.vertical-padding25 { .vertical-padding(25px); }
+.vertical-padding30 { .vertical-padding(30px); }
+.vertical-padding35 { .vertical-padding(35px); }
+.vertical-padding40 { .vertical-padding(40px); }
+.vertical-padding45 { .vertical-padding(45px); }
+.vertical-padding50 { .vertical-padding(50px); }
+.vertical-padding55 { .vertical-padding(55px); }
+.vertical-padding60 { .vertical-padding(60px); }
+
+.left-padding (@padding: 5px) { padding-left: @padding!important; }
+.left-padding5  { .left-padding; }
+.left-padding10 { .left-padding(10px); }
+.left-padding15 { .left-padding(15px); }
+.left-padding20 { .left-padding(20px); }
+.left-padding25 { .left-padding(25px); }
+
+// Margins
+// -------------------------
+.right-margin (@margin: 5px) { margin-right: @margin!important; }
+.right-margin5  { .right-margin; }
+.right-margin10 { .right-margin(10px); }
+.right-margin15 { .right-margin(15px); }
+.right-margin20 { .right-margin(20px); }
+.right-margin25 { .right-margin(25px); }
+
+.left-margin (@margin: 5px) { margin-left: @margin!important; }
+.left-margin5  { .left-margin; }
+.left-margin8 { .left-margin(8px); }
+.left-margin10 { .left-margin(10px); }
+.left-margin15 { .left-margin(15px); }
+.left-margin20 { .left-margin(20px); }
+.left-margin25 { .left-margin(25px); }
+
+.top-margin (@margin: 5px) { margin-top: @margin!important; }
+.top-margin5 { .top-margin; }
+.top-margin10 { .top-margin(10px); }
+.top-margin20 { .top-margin(20px); }
+
+.vertical-margin (@margin: 5px) {
+  margin-top: @margin!important;
+  margin-bottom: @margin!important;
+}
+.vertical-margin5 { .vertical-margin; }
+.vertical-margin10 { .vertical-margin(10px); }
+.vertical-margin15 { .vertical-margin(15px); }
+.vertical-margin20 { .vertical-margin(20px); }
+.vertical-margin25 { .vertical-margin(25px); }
+.vertical-margin30 { .vertical-margin(30px); }
+.vertical-margin35 { .vertical-margin(35px); }
+.vertical-margin40 { .vertical-margin(40px); }
+.vertical-margin45 { .vertical-margin(45px); }
+.vertical-margin50 { .vertical-margin(50px); }
+.vertical-margin55 { .vertical-margin(55px); }
+.vertical-margin60 { .vertical-margin(60px); }
+
+.transparent-30 {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    -moz-opacity:0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+}
+.transparent-60 {
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  -moz-opacity:0.6;
+  -khtml-opacity: 0.6;
+  opacity: 0.6;
+}
+.absolute-top-left (@top: 0, @left: 0) {
+  position: absolute;
+  top: @top;
+  left: @left;
+}
+.relative {
+  position: relative;
+}
+.italic { font-style: italic; }
+.underline { text-decoration: underline; }
+.hidden { display: none; }
+.center-text { text-align: center!important; }
+.left-text { text-align: left!important; }
+.right-text { text-align: right!important; }
+.break-word-text { word-wrap: break-word!important; }
+.no-border { border: none!important; }
+.no-margin { margin: 0!important; }
+.no-bottom-margin { margin-bottom: 0!important; }
+.no-padding { padding: 0!important; }
+.no-margin-padding {
+  .no-margin;
+  .no-padding;
+}
+.normal-letter-spacing {
+  letter-spacing: normal;
+}

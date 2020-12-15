@@ -1,0 +1,105 @@
+//== Navs
+//##
+//------------------------------------------------------------------------------
+
+.nav {
+  .open > a,
+  .open > a:hover,
+  .open > a:focus {
+    border-color: transparent;
+  }
+}
+
+
+// Nav tabs
+.nav-tabs {
+  border-color: @border-color;
+
+  &> li {
+
+    &.active > a {
+      border-bottom-color: transparent;
+      border-color: @border-color;
+    }
+
+    &> a {
+      background-color: @btn-default-bg;
+      border-bottom-color: @text-color;
+
+      &:hover {
+        background-color: #f6f6f6;
+        border-color: @border-color;
+      }
+    }
+  }
+
+  .caret {
+    border-top-color: @text-color;
+    border-bottom-color: @text-color;
+  }
+
+  &.nav-stacked {
+    border-bottom: 0;
+
+    li {
+
+      & + li {
+        margin-top: 1px;
+      }
+
+      &.active {
+        a {
+          border-bottom-color: @brand-success;
+
+          border-top-color: @brand-success;
+        }
+
+        a,
+        a:hover {
+          background: #f6f6f6;
+          border-left-color: transparent;
+          border-right-color: transparent;
+          color: #f6f6f6;
+          cursor: default;
+        }
+      }
+
+      > a {
+        background: @white;
+        border-bottom: 1px solid #ebebeb;
+        border-left-color: transparent;
+        border-right-color: transparent;
+
+        &:hover {
+          background: #f6f6f6;
+          border-top-color: #ebebeb;
+        }
+      }
+    }
+  }
+
+  &.nav-tabs-invert {
+    border-color: @border-color;
+
+    > li {
+      &.active > a,
+      &.active > a:hover,
+      &.active > a:focus {
+        color: @grey;
+      }
+
+      > a {
+        color: @link-color;
+
+        &:hover {
+          background: @white;
+          color: @link-hover-color;
+        }
+      }
+    }
+  }
+}
+
+.nav-pills {
+  font-weight: 300;
+}

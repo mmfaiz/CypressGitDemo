@@ -1,0 +1,77 @@
+//== Margins
+//##
+//------------------------------------------------------------------------------
+
+.no-margin { margin: 0 !important; }
+
+.top-margin-variant (@top-margin;) {
+    margin-top: @top-margin !important;
+}
+.right-margin-variant (@right-margin;) {
+    margin-right: @right-margin !important;
+}
+.left-margin-variant (@left-margin;) {
+    margin-left: @left-margin !important;
+}
+.bottom-margin-variant (@bottom-margin;) {
+    margin-bottom: @bottom-margin !important;
+}
+.vertical-margin-variant (@top-margin; @bottom-margin;) {
+    margin-top: @top-margin !important;
+    margin-bottom: @bottom-margin !important;
+}
+.horizontal-margin-variant (@right-margin; @left-margin;) {
+    margin-right: @right-margin !important;
+    margin-left: @left-margin !important;
+}
+
+.no-top-margin {    .top-margin-variant (0;); }
+.top-margin2 {      .top-margin-variant (2px;); }
+.top-margin5 {      .top-margin-variant (5px;); }
+.top-margin10 {     .top-margin-variant (10px;); }
+.top-margin20 {     .top-margin-variant (20px;); }
+.top-margin30 {     .top-margin-variant (30px;); }
+.top-margin40 {     .top-margin-variant (40px;); }
+.top-margin50 {     .top-margin-variant (50px;); }
+
+.no-right-margin {  .right-margin-variant (0;); }
+.right-margin5  {   .right-margin-variant (5px;); }
+.right-margin10 {   .right-margin-variant (10px;); }
+.right-margin20 {   .right-margin-variant (20px;); }
+.right-margin30 {   .right-margin-variant (30px;); }
+.right-margin40 {   .right-margin-variant (40px;); }
+.right-margin50 {   .right-margin-variant (50px;); }
+
+.no-left-margin {  .left-margin-variant (0;); }
+.left-margin5  {   .left-margin-variant (5px;); }
+.left-margin10 {   .left-margin-variant (10px;); }
+.left-margin20 {   .left-margin-variant (20px;); }
+.left-margin30 {   .left-margin-variant (30px;); }
+.left-margin40 {   .left-margin-variant (40px;); }
+.left-margin50 {   .left-margin-variant (50px;); }
+
+.no-bottom-margin {  .bottom-margin-variant (0;); }
+.bottom-margin5  {   .bottom-margin-variant (5px;); }
+.bottom-margin10 {   .bottom-margin-variant (10px;); }
+.bottom-margin20 {   .bottom-margin-variant (20px;); }
+.bottom-margin30 {   .bottom-margin-variant (30px;); }
+.bottom-margin40 {   .bottom-margin-variant (40px;); }
+.bottom-margin50 {   .bottom-margin-variant (50px;); }
+
+.no-vertical-margin {   .vertical-margin-variant (0; 0;); }
+.vertical-margin5 {     .vertical-margin-variant (5px; 5px;); }
+.vertical-margin10 {    .vertical-margin-variant (10px; 10px;); }
+.vertical-margin15 {    .vertical-margin-variant (15px; 15px;); }
+.vertical-margin20 {    .vertical-margin-variant (20px; 20px;); }
+.vertical-margin30 {    .vertical-margin-variant (30px; 30px;); }
+.vertical-margin40 {    .vertical-margin-variant (40px; 40px;); }
+.vertical-margin50 {    .vertical-margin-variant (50px; 50px;); }
+
+.no-horizontal-margin {   .horizontal-margin-variant (0; 0;); }
+.horizontal-margin5 {     .horizontal-margin-variant (5px; 5px;); }
+.horizontal-margin10 {    .horizontal-margin-variant (10px; 10px;); }
+.horizontal-margin15 {    .horizontal-margin-variant (15px; 15px;); }
+.horizontal-margin20 {    .horizontal-margin-variant (20px; 20px;); }
+.horizontal-margin30 {    .horizontal-margin-variant (30px; 30px;); }
+.horizontal-margin40 {    .horizontal-margin-variant (40px; 40px;); }
+.horizontal-margin50 {    .horizontal-margin-variant (50px; 50px;); }

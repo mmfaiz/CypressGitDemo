@@ -1,0 +1,140 @@
+//== Responsive
+//## Apply responsive CSS fixes as necessary
+//------------------------------------------------------------------------------
+
+@media (max-width: @screen-sm-max) {
+    .form-signin {
+        border: none;
+    }
+    .jumbotron {
+        padding: 40px 0;
+        .stripe {
+            padding: 30px 0;
+        }
+        form {
+            // .bootstrap-select.btn-group {
+
+            //     width: 300px!important;
+            // }
+            padding: 4px;
+        }
+    }
+
+    // User avatar sizes must be responsive too.
+    .avatar- {
+        &-wrapper {
+            display: table-cell;
+            max-width: 100px;
+            vertical-align: middle;
+        }
+        &-xxs {
+            height: 15px;
+            width: 15px;
+        }
+        &-xs {
+            height: 35px;
+            width: 35px;
+        }
+        &-sm {
+            height: 45px;
+            width: 45px;
+        }
+        &-md {
+            height: 75px;
+            width: 75px;
+        }
+        &-lg {
+            height: 100px;
+            width: 100px;
+        }
+        &-xlg {
+            height: 145px;
+            width: 145px;
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    #footer {
+        height     : auto;
+        text-align : center;
+    }
+
+    .form-signin {
+        border : none;
+        margin : 0 auto;
+        padding: 15px;
+    }
+
+    .jumbotron {
+        padding: 40px 0;
+
+        .stripe {
+            padding: 20px 0;
+        }
+
+        form {
+            margin : 0 30px;
+            padding: 4px;
+
+            .form-group {
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    // thumnails of facilities on facility list page
+    .facility-thumb {
+        display: block;
+        text-align: center;
+
+        .thumbnail {
+            border: medium none;
+        }
+    }
+
+    .facility-info-text {
+
+        .text-right {
+            text-align: left !important;
+        }
+    }
+
+    .avatar-wrapper {
+        display: table-cell;
+        max-width: 75px;
+        vertical-align: middle;
+    }
+
+
+    .avatar-square-xs,
+    .avatar-circle-xs {
+        height: 35px;
+        width: 35px;
+    }
+
+    .avatar-square-sm,
+    .avatar-circle-sm {
+        height: 45px;
+        width: 45px;
+    }
+
+    .avatar-square-md,
+    .avatar-circle-md {
+        height: 55px;
+        width: 55px;
+    }
+
+    .avatar-square-lg,
+    .avatar-circle-lg {
+        height: 75px;
+        width: 75px;
+
+    }
+
+    .avatar-square-xl,
+    .avatar-circle-xl {
+        height: 145px;
+        width: 145px;
+    }
+}

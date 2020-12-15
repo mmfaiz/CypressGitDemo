@@ -1,0 +1,439 @@
+//== Buttons
+//##
+//------------------------------------------------------------------------------
+
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0; // For input.btn
+    font-weight: @btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+    .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-small; @line-height-form; @border-radius-base);
+    .user-select(none);
+    box-shadow: none;
+    text-transform: uppercase;
+    height: auto;
+    position: relative;
+    letter-spacing: 1px;
+
+    &,
+    &:active,
+    &.active {
+        &:focus,
+        &.focus {
+            .tab-focus();
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+        color: @btn-default-color;
+        text-decoration: none;
+    }
+
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: @cursor-disabled;
+        pointer-events: none; // Future-proof disabling of clicks
+        .opacity(.65);
+        .box-shadow(none);
+    }
+
+    .fa {
+        margin-right: 2px;
+    }
+
+    &.slot.free.marked {
+        color: transparent;
+
+        &:after {
+            .btn;
+            content:"\f00c";
+            font-family: FontAwesome;
+            color: @white;
+            visibility: visible;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+    .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.btn-primary {
+    .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+// Success appears as green
+.btn-success {
+    .button-variant(@btn-success-color; @btn-success-bg; transparent);
+    &.btn-inverse {
+        .button-variant(@btn-success-bg; @btn-success-color; transparent);
+    }
+}
+// Info appears as blue-green
+.btn-info {
+    .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+// Warning appears as orange
+.btn-warning {
+    .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+// Danger and error appear as red
+.btn-danger {
+    .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+    color: @link-color;
+    font-weight: normal;
+    border-radius: 0;
+
+    &,
+    &:active,
+    &.active,
+    &[disabled],
+    fieldset[disabled] & {
+        background-color: transparent;
+        .box-shadow(none);
+    }
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: transparent;
+    }
+    &:hover,
+    &:focus {
+        color: @link-hover-color;
+        text-decoration: @link-hover-decoration;
+        background-color: transparent;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus {
+            color: @btn-link-disabled-color;
+            text-decoration: none;
+        }
+    }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn.btn-lg {
+    // line-height: ensure even-numbered height of button next to large input
+    .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-small; @line-height-large; @border-radius-large);
+    letter-spacing: 0.6px;
+}
+.btn.btn-md {
+    letter-spacing: 0.3px;
+}
+.btn.btn-sm {
+    // line-height: ensure proper height of button next to small input
+    .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+.btn.btn-xs {
+    .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-xs; @line-height-small; @border-radius-small);
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+.btn.btn-xxs {
+    .button-size(@padding-xxs-vertical; @padding-xxs-horizontal; @font-size-xs; @line-height-small; @border-radius-small);
+    font-weight: 500;
+    letter-spacing: 0.1px;
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.form-group .btn-group.btn-group-fit {
+    width: auto;
+    display: inline-block;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+    margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
+    }
+}
+
+// White button
+.btn-white {
+    .button-variant(@btn-white-color; @btn-white-bg; @btn-white-border);
+}
+// Black button
+.btn-black {
+    .button-variant(@btn-black-color; @btn-black-bg; @btn-black-border);
+}
+
+//Social Media Buttons
+.btn-facebook {
+    .button-variant(@btn-facebook-color; @btn-facebook-bg; @btn-facebook-border);
+}
+.btn-twitter {
+    .button-variant(@btn-twitter-color; @btn-twitter-bg; @btn-twitter-border);
+}
+.btn-google-plus {
+    .button-variant(@btn-google-plus-color; @btn-google-plus-bg; @btn-google-plus-border);
+}
+
+.btn-group {
+
+    .btn ~ .dropdown-toggle {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .dropdown-menu {
+        border-top-width: 0;
+    }
+
+    &.dropup .dropdown-menu {
+        border-top-width: 1px;
+        border-bottom-width: 0;
+        margin-bottom: 0;
+    }
+
+    .dropdown-toggle {
+        font-weight: 500;
+        letter-spacing: 0;
+        text-transform: none;
+
+        &.btn-default ~ .dropdown-menu {
+            .dropdown-toggle-dropdown-menu-variant ( @btn-default-bg; @btn-default-border; @btn-default-color; @btn-default-bg; );
+        }
+
+        &.btn-primary ~ .dropdown-menu {
+            .dropdown-toggle-dropdown-menu-variant ( @btn-primary-bg; @btn-primary-border; @btn-primary-color; @btn-primary-bg; );
+        }
+
+        &.btn-success ~ .dropdown-menu {
+            .dropdown-toggle-dropdown-menu-variant ( @btn-success-bg; @btn-success-border; @btn-success-color; @btn-success-bg; );
+        }
+
+        &.btn-info ~ .dropdown-menu {
+            .dropdown-toggle-dropdown-menu-variant ( @btn-info-bg; @btn-info-border; @btn-info-color; @btn-info-bg; );
+        }
+
+        &.btn-warning ~ .dropdown-menu {
+            .dropdown-toggle-dropdown-menu-variant ( @btn-warning-bg; @btn-warning-border; @btn-warning-color; @btn-warning-bg; );
+        }
+
+        &.btn-danger ~ .dropdown-menu {
+            .dropdown-toggle-dropdown-menu-variant ( @btn-danger-bg; @btn-danger-border; @btn-danger-color; @btn-danger-bg; );
+        }
+
+        &.btn-white ~ .dropdown-menu {
+            .dropdown-toggle-dropdown-menu-variant ( @btn-white-bg; @btn-white-border; @btn-white-color; @btn-white-bg; );
+        }
+
+        &.btn-black ~ .dropdown-menu {
+            .dropdown-toggle-dropdown-menu-variant ( @btn-black-bg; @btn-black-border; @btn-black-color; @btn-black-bg; );
+        }
+    }
+}
+
+.btn-outline {
+    border-width: 2px;
+    border-radius: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &.btn-default {
+        .button-outline-variant (#999;);
+    }
+
+    &.btn-primary {
+        .button-outline-variant (@btn-primary-bg;);
+    }
+
+    &.btn-success {
+        .button-outline-variant (@btn-success-bg;);
+    }
+
+    &.btn-info {
+        .button-outline-variant (@btn-info-bg;);
+    }
+
+    &.btn-warning {
+        .button-outline-variant (@btn-warning-bg;);
+    }
+
+    &.btn-danger {
+        .button-outline-variant (@btn-danger-bg;);
+    }
+
+    &.btn-white {
+        color: @white;
+        background-color: transparent;
+        border-color: @white;
+        .transition(all .5s);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active,
+        .open > .dropdown-toggle& {
+            color: @brand-success;
+            background-color: @white;
+            border-color: @white;
+        }
+    }
+
+    &.btn-black {
+        .button-outline-variant (@black;);
+    }
+
+    &.btn-lg {
+        border-radius: 10px;
+    }
+
+    &.btn-sm {
+        border-radius: 6px;
+        border-width: 1px;
+    }
+
+    &.btn-xs {
+        border-radius: 2px;
+        border-width: 1px;
+    }
+
+    &.btn-xxs {
+        border-radius: 1px;
+        border-width: 1px;
+    }
+}
+
+.btn-link {
+
+    &.btn-default {
+        .button-link-variant (@btn-default-bg;);
+    }
+
+    &.btn-primary {
+        .button-link-variant (@btn-primary-bg;);
+    }
+
+    &.btn-success {
+        .button-link-variant (@btn-success-bg;);
+    }
+
+    &.btn-info {
+        .button-link-variant (@btn-info-bg;);
+    }
+
+    &.btn-warning {
+        .button-link-variant (@btn-warning-bg;);
+    }
+
+    &.btn-danger {
+        .button-link-variant (@btn-danger-bg;);
+    }
+
+    &.btn-white {
+        .button-link-variant (@btn-white-bg;);
+    }
+
+    &.btn-black {
+        .button-link-variant (@black;);
+    }
+}
+
+.btn-slot {
+    background-color: #fbfbfb;
+    border-color: lighten(@brand-color, 10%);
+    color: @grey;
+    font-weight: 400;
+    margin-bottom: 5px;
+    padding: 10px 13px;
+    width: 55px;
+    font-size: 13px;
+
+    &:hover {
+        background-color: @white;
+        border-color: @grey-light;
+        box-shadow: none;
+        color: @brand-color;
+        outline: medium none !important;
+    }
+
+    &:focus,
+    &:active,
+    &.active {
+        background-color: @brand-color;
+        border-color: @brand-color;
+        box-shadow: none;
+        color: @white;
+        outline: medium none !important;
+    }
+
+    &.marked {
+        background: @grey-light;
+        color: @grey-darker;
+    }
+}
+
+.btn-circle {
+    border-radius: 50%;
+
+    &.btn-icon {
+        height: 30px;
+        width: 30px;
+        padding: 0;
+
+        i {
+            font-size: 0.6em;
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 26px;
+            width: 100%;
+            display: block;
+            font-weight: 900;
+        }
+    }
+}

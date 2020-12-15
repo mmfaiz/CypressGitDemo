@@ -1,0 +1,42 @@
+/* Chartist.js 0.7.3
+* Plugin overrides
+*/
+
+.ct-chart .ct-label,
+.ct-chart .ct-label.ct-horizontal,
+.ct-chart .ct-label.ct-vertical {
+    display: block!important;
+    width: 100%!important;
+    height: 100%!important;
+    fill: @white !important;;
+    color: @white !important;
+    font-size: .9rem!important;
+    text-align: center!important;
+}
+.ct-point-label {
+    font-size: .75rem!important;
+    color: @brand-info !important;
+}
+.ct-chart .ct-label.ct-vertical {
+    text-align: right!important;
+}
+.ct-chart .ct-grid {
+    stroke: lighten(@brand-color, 5%)!important;
+    stroke-width: 1px!important;
+    stroke-dasharray: none!important;
+}
+/* Hiding vertical lines */
+.ct-grid.ct-vertical {
+    display: none;
+}
+
+.ct-chart .ct-line {
+    fill: none!important;
+    stroke-width: 4px!important;
+}
+.ct-chart .ct-series.ct-series-a .ct-bar,
+.ct-chart .ct-series.ct-series-a .ct-line,
+.ct-chart .ct-series.ct-series-a .ct-point,
+.ct-chart .ct-series.ct-series-a .ct-slice.ct-donut {
+    stroke: @white!important;
+}

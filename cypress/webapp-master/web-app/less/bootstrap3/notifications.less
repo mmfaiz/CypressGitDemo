@@ -1,0 +1,111 @@
+//== Notifications
+//##
+//------------------------------------------------------------------------------
+
+.profile-notification {
+    position: relative;
+    background: @white;
+    color: #656565;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.global-notification {
+    background: none repeat scroll 0 0 #f7fce7;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.flash-message {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .flash-inner {
+        padding-right: 25px;
+    }
+}
+
+#message-container {
+    position: relative;
+
+    p:last-child {
+        margin: 0;
+    }
+
+    p a:not(.btn) {
+        color: darken(@brand-primary, 30%)
+    }
+
+    .message-container {
+        color: @gray-dark;
+        background-color: rgba(255,255,255,0.93);
+        background-clip: padding-box;
+        border-bottom: 1px solid rgba(#bbb,0.9);
+        position: relative;
+
+        &.flash-message, &.profile-notification, &.global-notification {
+            padding: 15px 40px;
+
+            &, p {
+                line-height: 30px;
+            }
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 12px;
+        color: @close-color;
+        opacity: 1;
+    }
+}
+
+.splash-page {
+
+    #message-container {
+        top: @navbar-height;
+        position: absolute;
+        width: 100%;
+        z-index: 1020;
+    }
+
+}
+
+
+.front-end-message {
+    .fem-container {
+        position: relative;
+
+        .splash-page & {
+
+        }
+
+        .fem-expand {
+            display: none;
+            position: absolute;
+            background: #FFF;
+            width: 100%;
+            left: 0;
+            z-index: 10000;
+            border-top: 1px solid rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+
+        &.open .fem-expand {
+            display: block;
+        }
+
+        .fem-close {
+
+        }
+    }
+}

@@ -1,0 +1,303 @@
+//== Landing Page
+//##
+//------------------------------------------------------------------------------
+
+#landing {
+    .lead {
+        font-size: 1.15em;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .responsive-vertical-padding {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    @media (min-width: @screen-xs-min) {
+        .container {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .responsive-vertical-padding {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .container {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .responsive-vertical-padding {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+
+    .checked {
+        margin-bottom: 20px;
+
+        li:before {
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+            content: '\f058';
+        }
+    }
+}
+
+#about {
+    position: relative;
+
+    .top {
+
+        h2 {
+            font-size: 24px;
+        }
+
+        .logo-2019 {
+            height: 24px;
+        }
+
+    }
+
+    .bottom, .bottom-bg {
+        padding: 20px 0 0px;
+    }
+
+    .bottom-bg {
+
+    }
+
+    .big-phone-overlay {
+        .inner {
+            width: 100%;
+            height: 190px;
+            background-image: url("/images/landing/matchi-phone-v2.png");
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        #landing .lead {
+            margin-bottom: 20px;
+        }
+
+        .top {
+            padding: 40px 0;
+        }
+
+        .bottom, .bottom-bg {
+            padding: 40px 0;
+        }
+
+        .bottom-bg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .big-phone-overlay {
+            position: absolute;
+            left: 0;
+            right: 58.333333%;
+            top: 0;
+            bottom: 0;
+            z-index: 100;
+
+            .inner {
+                background-position: center bottom;
+                width: auto;
+                height: auto;
+                position: absolute;
+                bottom: 40px;
+                top: -90px;
+                left: 0px;
+                right: 20px;
+            }
+        }
+
+        .no-visibility-sm-up {
+            visibility: hidden;
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        .big-phone-overlay {
+            .inner {
+                top: -160px;
+            }
+        }
+    }
+
+    .download-app-buttons {
+        display: flex;
+
+        a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            &:first-child {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+#site-stats {
+    .featurette {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .featurette-item {
+            flex-grow: 1;
+            flex-basis: 130px;
+            padding: 10px 0;
+
+        }
+    }
+
+    .number {
+        display: block;
+        font-size: 3em;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+    }
+    .title {
+        font-size: 1.3em;
+        letter-spacing: 0.5px;
+    }
+}
+
+#for-users {
+    .intro {
+        margin-bottom: 20px;
+        h2 {
+            margin-top: 0;
+        }
+    }
+
+    .lead {
+        margin-bottom: 20px;
+    }
+
+    .checked {
+        margin-bottom: 20px;
+
+        li:before {
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+            font-size: 1.7em;
+            margin-right: 10px;
+            content: '\f058';
+        }
+    }
+
+    .side-image {
+        margin-bottom: -100px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .side-image {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    .bottom {
+        height: 120px;
+    }
+}
+
+#for-admins {
+    overflow: hidden;
+    .intro {
+        margin-bottom: 20px;
+        h2 {
+            margin-top: 0;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .lead {
+        margin-bottom: 20px;
+    }
+
+    .checked {
+        margin-bottom: 20px;
+
+        li:before {
+            font-size: 1.7em;
+            margin-right: 10px;
+            color: #FFF;
+        }
+    }
+
+    .side-image {
+        margin-bottom: -20px;
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+
+    @media (min-width: @screen-sm-min) {
+        .intro {
+            margin-bottom: 0;
+            max-height: 600px;
+            overflow: hidden;
+
+            .inner {
+                min-height: 46vw;
+            }
+        }
+
+        .side-image {
+            margin-bottom: -40px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    .btn {
+        color: #FFF;
+        border-color: #FFF;
+    }
+}

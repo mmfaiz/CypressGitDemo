@@ -1,0 +1,81 @@
+//== Labels
+//##
+//------------------------------------------------------------------------------
+
+.label {
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 0;
+    font-weight: 400;
+
+    &-default {
+        .label-variant(@label-default-bg);
+    }
+
+    &-yellow {
+        .label-variant(@label-yellow-bg);
+    }
+
+    &-blue {
+        .label-variant(@label-info-bg);
+    }
+
+    &-green {
+        .label-variant(@label-brand-bg);
+    }
+
+    &-black {
+        .label-variant(@black);
+    }
+
+    &-grey-light {
+        .label-variant(@grey-light);
+    }
+}
+
+.label-outline {
+    background-color: @white;
+
+    &.label-default {
+        .label-outline-variant(@label-default-bg);
+    }
+
+    &.label-primary {
+        .label-outline-variant(@label-primary-bg);
+    }
+
+    &.label-success {
+        .label-outline-variant(@label-success-bg);
+    }
+
+    &.label-info,
+    &.label-blue {
+        .label-outline-variant(@label-info-bg);
+    }
+
+    &.label-yellow {
+        .label-outline-variant(@label-yellow-bg);
+    }
+
+    &.label-warning {
+        .label-outline-variant(@label-warning-bg);
+    }
+
+    &.label-danger {
+        .label-outline-variant(@label-danger-bg);
+    }
+
+    &.label-brand,
+    &.label-green {
+        .label-outline-variant(@label-brand-bg);
+    }
+
+    &.label-black {
+        .label-outline-variant(@black);
+    }
+
+    &.label-grey-light {
+        .label-outline-variant(@grey-light);
+    }
+
+}

@@ -1,0 +1,1 @@
+<g:userFacilitySchedule facility="${facility}"/>

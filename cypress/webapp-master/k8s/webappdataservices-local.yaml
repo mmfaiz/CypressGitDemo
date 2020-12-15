@@ -1,0 +1,20 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+spec:
+  type: ExternalName
+  externalName: mysql.default.svc.cluster.local
+  ports:
+    - port: 3306
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: redis-master
+spec:
+  type: ExternalName
+  externalName: redis-master.default.svc.cluster.local
+  ports:
+    - port: 6379

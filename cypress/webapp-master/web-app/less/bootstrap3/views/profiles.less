@@ -1,0 +1,157 @@
+//== Profiles
+//## Profile views for USER and FACILITY
+//------------------------------------------------------------------------------
+
+//## User Profile & Facility
+// --------------------------------------------------
+
+// Cover Images
+.welcome-wrapper {
+
+    .cover-image-btns {
+        width: auto;
+    }
+
+    .btn-upload-cover,
+    .btn-remove-cover {
+        display: none;
+        margin: 10px auto;
+        top: 43%;
+        z-index: 99999;
+    }
+
+    &.upload-cover {
+        position: relative;
+
+        &:hover {
+
+            > img {
+                opacity: 0.5;
+            }
+
+            .btn-upload-cover,
+            .btn-remove-cover {
+                .animated;
+                .fadeIn;
+                display: block;
+
+            }
+        }
+    }
+}
+
+// Avatar & Facility Logo Images
+.profile-avatar-wrapper {
+    position: relative;
+    .profile-avatar,
+    .profile-avatar-user {
+        background-color: @white;
+        border: 4px solid @white;
+    }
+
+    .btn-upload-avatar {
+        display: none;
+        margin: 0 auto;
+        z-index: 99999;
+        position: absolute;
+    }
+
+    &.upload-avatar {
+
+        &:hover {
+
+            .profile-avatar,
+            .profile-avatar-user {
+                background-color: @white;
+            }
+
+            img {
+                opacity: 0.4;
+            }
+
+            .btn-upload-avatar {
+                .animated;
+                .fadeIn;
+                display: block;
+            }
+        }
+    }
+}
+
+.profile-name-location {
+    margin-left: 15px;
+}
+
+@media (min-width: @screen-md-min) {
+    .profile-avatar-wrapper {
+        top: 50%;
+        position: absolute;
+        float: none;
+        transform: translate(0, -50%);
+    }
+
+    // User Facility Name & Location Info
+    .profile-name-location {
+        margin-left: 180px;
+    }
+}
+
+// User Profile - Add/Edit SportProfile Skilllevel Description Text.
+.skill-level-text {
+    display: block;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+//## Responsive Stuff
+// --------------------------------------------------
+
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+    .profile-avatar-wrapper {
+        float: left;
+        position: static;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        transform: none;
+        .profile-avatar {  .avatar-square-md; border: none; }
+        .profile-avatar-user {  .avatar-circle-md; border: none; }
+
+
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+
+    .profile-avatar-wrapper {
+        float: left;
+        position: static;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        transform: none;
+
+        .profile-avatar,
+        .profile-avatar-user {
+            height: 55px;
+            width: 55px;
+            border: none;
+        }
+    }
+
+    .profile-name-location {
+
+        .badge-ranking {
+            font-size: 0.8em !important;
+            font-weight: 400;
+            padding: 3px;
+        }
+    }
+}
+
+.pastBookings .playerNames div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

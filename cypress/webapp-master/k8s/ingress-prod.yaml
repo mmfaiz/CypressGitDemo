@@ -1,0 +1,65 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: webapp-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/default-backend: 'maintenance'
+    nginx.ingress.kubernetes.io/affinity: 'cookie'
+    nginx.ingress.kubernetes.io/session-cookie-name: 'matchi.ingress'
+    nginx.ingress.kubernetes.io/affinity-mode: 'balanced'
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: '3'
+    nginx.ingress.kubernetes.io/proxy-read-timeout: '600'
+    nginx.ingress.kubernetes.io/proxy-send-timeout: '600'
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "X-upstream: $upstream_addr";
+      send_timeout 300;
+      if ($host = 'matchi.se' ) {
+        rewrite ^ https://www.matchi.se$request_uri permanent;
+      }
+spec:
+  rules:
+    - host: 'matchi.se'
+      http:
+        paths:
+          - backend:
+              serviceName: webapp
+              servicePort: webapp
+            path: /
+    - host: 'www.matchi.se'
+      http:
+        paths:
+          - backend:
+              serviceName: webapp
+              servicePort: webapp
+            path: /
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: webapp-ingress-static
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_cache static-cache;
+      proxy_cache_valid 404 1m;
+      proxy_cache_use_stale error timeout updating http_404 http_500 http_502 http_503 http_504;
+      proxy_cache_bypass $http_x_purge;
+      add_header X-Cache-Status $upstream_cache_status;
+
+spec:
+  rules:
+    - host: 'matchi.se'
+      http:
+        paths:
+          - path: /static/
+            backend:
+              serviceName: webapp
+              servicePort: webapp
+    - host: 'www.matchi.se'
+      http:
+        paths:
+          - path: /static/
+            backend:
+              serviceName: webapp
+              servicePort: webapp

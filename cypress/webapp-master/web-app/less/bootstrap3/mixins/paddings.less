@@ -1,0 +1,94 @@
+//== Paddings
+//##
+//------------------------------------------------------------------------------
+
+.no-padding { padding: 0!important; }
+
+.padding-variant (@padding;) {
+    padding: @padding;
+}
+.top-padding-variant (@top-padding;) {
+    padding-top: @top-padding !important;
+}
+.right-padding-variant (@right-padding;) {
+    padding-right: @right-padding !important;
+}
+.left-padding-variant (@left-padding;) {
+    padding-left: @left-padding !important;
+}
+.bottom-padding-variant (@bottom-padding;) {
+    padding-bottom: @bottom-padding !important;
+}
+.vertical-padding-variant (@top-padding; @bottom-padding;) {
+    padding-top: @top-padding !important;
+    padding-bottom: @bottom-padding !important;
+}
+.horizontal-padding-variant (@right-padding; @left-padding;) {
+    padding-right: @right-padding !important;
+    padding-left: @left-padding !important;
+}
+
+.padding5 {     .padding-variant (5px;); }
+.padding10 {    .padding-variant (10px;); }
+.padding20 {    .padding-variant (20px;); }
+
+.no-top-padding {    .top-padding-variant (0;); }
+.top-padding1 {      .top-padding-variant (1px;); }
+.top-padding2 {      .top-padding-variant (2px;); }
+.top-padding5 {      .top-padding-variant (5px;); }
+.top-padding10 {     .top-padding-variant (10px;); }
+.top-padding20 {     .top-padding-variant (20px;); }
+.top-padding30 {     .top-padding-variant (30px;); }
+.top-padding40 {     .top-padding-variant (40px;); }
+.top-padding50 {     .top-padding-variant (50px;); }
+
+.no-right-padding {  .right-padding-variant (0;); }
+.right-padding5  {   .right-padding-variant (5px;); }
+.right-padding10 {   .right-padding-variant (10px;); }
+.right-padding20 {   .right-padding-variant (20px;); }
+.right-padding30 {   .right-padding-variant (30px;); }
+.right-padding40 {   .right-padding-variant (40px;); }
+.right-padding50 {   .right-padding-variant (50px;); }
+
+.no-left-padding {  .left-padding-variant (0px;); }
+.left-padding5  {   .left-padding-variant (5px;); }
+.left-padding10 {   .left-padding-variant (10px;); }
+.left-padding20 {   .left-padding-variant (20px;); }
+.left-padding30 {   .left-padding-variant (30px;); }
+.left-padding40 {   .left-padding-variant (40px;); }
+.left-padding50 {   .left-padding-variant (50px;); }
+
+.no-bottom-padding {  .bottom-padding-variant (0;); }
+.bottom-padding5  {   .bottom-padding-variant (5px;); }
+.bottom-padding10 {   .bottom-padding-variant (10px;); }
+.bottom-padding20 {   .bottom-padding-variant (20px;); }
+.bottom-padding30 {   .bottom-padding-variant (30px;); }
+.bottom-padding40 {   .bottom-padding-variant (40px;); }
+.bottom-padding50 {   .bottom-padding-variant (50px;); }
+
+.no-vertical-padding {   .vertical-padding-variant (0; 0;); }
+.vertical-padding5 {     .vertical-padding-variant (5px; 5px;); }
+.vertical-padding10 {    .vertical-padding-variant (10px; 10px;); }
+.vertical-padding15 {    .vertical-padding-variant (15px; 15px;); }
+.vertical-padding20 {    .vertical-padding-variant (20px; 20px;); }
+.vertical-padding30 {    .vertical-padding-variant (30px; 30px;); }
+.vertical-padding40 {    .vertical-padding-variant (40px; 40px;); }
+.vertical-padding50 {    .vertical-padding-variant (50px; 50px;); }
+.vertical-padding60 {    .vertical-padding-variant (60px; 60px;); }
+.vertical-padding100 {    .vertical-padding-variant (100px; 100px;); }
+
+.no-horizontal-padding {   .horizontal-padding-variant (0; 0;); }
+.horizontal-padding5 {     .horizontal-padding-variant (5px; 5px;); }
+.horizontal-padding10 {    .horizontal-padding-variant (10px; 10px;); }
+.horizontal-padding15 {    .horizontal-padding-variant (15px; 15px;); }
+.horizontal-padding20 {    .horizontal-padding-variant (20px; 20px;); }
+.horizontal-padding30 {    .horizontal-padding-variant (30px; 30px;); }
+.horizontal-padding40 {    .horizontal-padding-variant (40px; 40px;); }
+.horizontal-padding50 {    .horizontal-padding-variant (50px; 50px;); }
+.horizontal-padding60 {    .horizontal-padding-variant (60px; 60px;); }
+.horizontal-padding100 {    .horizontal-padding-variant (100px; 100px;); }
+
+.no-margin-padding {
+    .no-margin;
+    .no-padding;
+}

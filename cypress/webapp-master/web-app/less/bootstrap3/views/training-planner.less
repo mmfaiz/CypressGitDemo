@@ -1,0 +1,213 @@
+body.dragging, body.dragging * {
+    cursor: move !important;
+}
+
+#list-courses span.course-name {
+    line-height: 0.8em;
+}
+
+.dragged {
+    position: absolute;
+    opacity: 0.5;
+    z-index: 2000;
+}
+
+ol.droppable-item {
+    min-height: 100px;
+
+    li.placeholder {
+        position: relative;
+
+        &:before {
+            position: absolute;
+        }
+    }
+}
+
+.panel-day {
+
+    .panel-day-heading {
+        background-color: @grey;
+        padding: 10px;
+        font-size: 0.9em;
+
+        .panel-title a {
+            color: @white;
+        }
+    }
+}
+
+.panel-court {
+    background-color: #f9f9f9;
+    box-shadow: none;
+    padding: 0;
+    margin-right: 0;
+    min-height: 218px;
+    transition: margin 0.1s ease-in 0s;
+
+    .court-heading {
+        background-color: #e2e2e2;
+        border: none;
+        padding: 10px;
+        font-size: 0.8em;
+    }
+
+    .occasion-grid {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row nowrap;
+        justify-content: flex-start;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 0;
+        padding: 10px;
+
+        .panel-occasion {
+            list-style: none;
+            margin-right: 5px;
+            // max-height: 260px;
+            max-width: 200px;
+            min-width: 200px;
+
+            .panel-heading {
+                padding: 5px;
+
+                .list-table {
+
+                    li {
+                        padding: 0 5px 0 0;
+                    }
+                }
+
+                .dropdown-menu {
+
+                    li {
+                        padding: 0 0 0 0 !important;
+
+                        a {
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+
+            .list-matches {
+                min-height: 160px;
+                // overflow-y: auto;
+
+                li {
+                    padding: 4px 5px;
+                }
+            }
+        }
+
+        .draggable-item {
+            .media {
+                .media-left {
+                    display: none;
+                }
+                .media-body {
+                    .text-sm;
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.course-color-indicator {
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 4px;
+    width: 20px;
+
+    &.course-hint {
+        &-YELLOW {
+            .course-color-indicator-variant(@yellow;);
+        }
+        &-ORANGE {
+            .course-color-indicator-variant(@orange;);
+        }
+        &-RED {
+            .course-color-indicator-variant(@red;);
+        }
+        &-PURPLE {
+            .course-color-indicator-variant(@purple;);
+        }
+        &-BLUE {
+            .course-color-indicator-variant(@blue;);
+        }
+        &-GREEN {
+            .course-color-indicator-variant(@green;);
+        }
+        &-BLACK {
+            .course-color-indicator-variant(@black;);
+        }
+        &-BROWN {
+            .course-color-indicator-variant(@brown;);
+        }
+        &-PINK {
+            .course-color-indicator-variant(@pink;);
+        }
+        &-GREY {
+            .course-color-indicator-variant(@grey-light;);
+        }
+    }
+}
+
+.participant-course-variant(@color;) {
+    border-left: 4px solid @color;
+}
+
+.list-participants {
+    li {
+        padding: 5px;
+
+        &.course {
+            &-YELLOW {
+                .participant-course-variant(@yellow;);
+            }
+            &-ORANGE {
+                .participant-course-variant(@orange;);
+            }
+            &-RED {
+                .participant-course-variant(@red;);
+            }
+            &-PURPLE {
+                .participant-course-variant(@purple;);
+            }
+            &-BLUE {
+                .participant-course-variant(@blue;);
+            }
+            &-GREEN {
+                .participant-course-variant(@green;);
+            }
+            &-BLACK {
+                .participant-course-variant(@black;);
+            }
+            &-BROWN {
+                .participant-course-variant(@brown;);
+            }
+            &-PINK {
+                .participant-course-variant(@pink;);
+            }
+            &-GREY {
+                .participant-course-variant(@grey-light;);
+            }
+        }
+
+        .media {
+            padding-left: 2px;
+        }
+    }
+}

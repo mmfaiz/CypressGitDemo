@@ -1,0 +1,6 @@
+#
+# messages_de.i18n
+# Client-side i18n, German messages.
+#
+
+@import _messages

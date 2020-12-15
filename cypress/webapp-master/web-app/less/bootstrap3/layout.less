@@ -1,0 +1,263 @@
+//== Layout
+//## Block elments such as sections, divs, header and footer objects.
+//## As well as custom elements such as wrappers and such.
+//------------------------------------------------------------------------------
+
+//** Wrapper for page content to push down footer
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto -361px; // Negative indent footer by it's height
+    overflow-x: hidden; // Bootstrap's 'row' causes horizontal scroll, this fixes that.
+    padding: 0 0 361px; // footer height + 0px breathing room
+
+    &.wrap-less {
+        margin: 0 auto -230px; // Negative indent footer by it's height
+        overflow-x: hidden; // Bootstrap's 'row' causes horizontal scroll, this fixes that.
+        padding: 0 0 230px; // footer height + 0px breathing room
+    }
+
+    #wrap-content {
+        margin-top: @navbar-height;   // calc(@navbar-height - 1px);
+
+        .content-container {
+            padding-top: 30px;
+        }
+
+        @media (min-width: @screen-sm-min) {
+            .splash-page-no-mobile {
+                margin-top: 0;
+            }
+        }
+        .splash-page:not(.splash-page-no-mobile) & {
+            margin-top: 0;
+        }
+    }
+}
+
+//** wrapper to set content fullpage
+#wrapper {
+    min-height: 100%;
+    overflow-x: hidden; // Bootstrap's 'row' causes horizontal scroll, this fixes that.
+}
+
+
+.container.borders {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+//** Fullpage content
+.overlay {
+    background: @brand-color;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    .content {
+        padding: 160px 0;
+
+        h1 {
+            font-weight: bold;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            color: @white;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-link {
+            color: @white;
+            text-decoration: underline;
+        }
+    }
+
+    .fa-stack-2x {
+        color: @white;
+    }
+
+    .fa-inverse {
+        color: @brand-color;
+    }
+}
+
+
+
+//== Blocks
+//## Used to give background colors and borders to block elements such as sections.
+//------------------------------------------------------------------------------
+
+.block {
+
+    &.block-dark {
+        background-color: #333333;
+        color: @white;
+    }
+
+    &.block-grey {
+        background-color: #eaeaea;
+    }
+
+    &.block-white {
+        background: @white;
+
+        .lead {
+            color: @text-muted;
+        }
+    }
+}
+
+
+
+//== Rows
+//## Used to give background colors and borders to rows.
+//------------------------------------------------------------------------------
+
+.row {
+
+    &.row-dark {
+        background-color: #333;
+        border: solid #ebebeb;
+        border-width: 1px 0;
+    }
+
+    &.row-grade {
+        background: url("/images/straight_shadow_divider.png") repeat-x bottom center;
+    }
+
+    &.row-grey {
+        background-color: #f2f2f2;
+        border: solid #ebebeb;
+        border-width: 1px 0;
+    }
+
+    &.row-white {
+        border: solid #ebebeb;
+        border-width: 1px 0;
+    }
+
+    &.row-full {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+
+//== Top footer
+//## Used to display sponsor image-links.
+//------------------------------------------------------------------------------
+
+#top-footer {
+    background: none repeat scroll 0 0 #fff;
+    border-top: 1px solid #ebebeb;
+    color: #fff;
+    font-size: 0.8em;
+
+    .partner {
+        margin: 20px 0;
+
+        img {
+            padding: 0;
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+
+            -webkit-transition: -webkit-filter .5s; /* Safari */
+            transition: filter .5s;
+
+            &:hover {
+                -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+                filter: grayscale(0%);
+            }
+        }
+    }
+}
+
+//== Footer
+//##
+//------------------------------------------------------------------------------
+
+#footer {
+    background: @grey-darker;
+    .admin & {
+        background: @HOM-color;
+    }
+    color: @white;
+    font-size: 0.9em;
+    padding: 30px 0 20px;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: @white;
+    }
+
+    a {
+        color: @white;
+
+        &:hover {
+            color: @brand-color;
+            text-decoration: none;
+        }
+    }
+
+    .icon {
+
+        i {
+            margin-right: 5px;
+        }
+
+        a {
+            &:hover {
+                color: @brand-color;
+            }
+        }
+    }
+
+    select {
+        line-height: 20px;
+        height: 20px;
+        box-sizing: unset;
+        padding: 3px 10px;
+        vertical-align: middle;
+        border: 1px solid #ccc;
+    }
+
+    #aFacility + .bootstrap-select {
+        width: auto;
+        .bs-searchbox {
+            padding: 0;
+            input {
+                padding: 3px 10px !important;
+            }
+        }
+        .selectpicker {
+            li {
+                line-height: 18px;
+                height: 26px;
+                a {
+                    padding: 3px 10px;
+                    color: @text-color;
+
+                    &:hover {
+                        color: #FFF;
+                    }
+                }
+                &.active a {
+                    color: #FFF;
+                }
+            }
+        }
+        .dropdown-toggle {
+            width: auto;
+            max-width: 300px;
+            padding: 3px 10px;
+        }
+    }
+}

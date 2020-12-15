@@ -1,0 +1,35 @@
+ul.league-list {
+    .list-unstyled;
+
+    li {
+        .bottom-padding10;
+        font-weight: 600;
+    }
+}
+
+tr  {
+    &.league-brand-header {
+        border-bottom: 4px solid @brand-color;
+        background-color: @white!important;
+        th { .padding5; }
+        font-size: 16px;
+    }
+
+    &.league-info-header {
+        border-bottom: 4px solid @brand-info;
+        background-color: @white!important;
+        font-size: 16px;
+        th { .padding5; }
+    }
+
+    &.league-column-titles {
+        background-color: #e9e9e9;
+        border-bottom:solid 2px @grey-light;
+        th { .padding5; }
+    }
+
+    &.league-column-content {
+        td { .padding5; }
+    }
+
+}

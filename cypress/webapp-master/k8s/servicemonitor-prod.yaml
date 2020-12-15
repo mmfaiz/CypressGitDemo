@@ -1,0 +1,45 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: webapp-scraping
+  namespace: webapp
+spec:
+  endpoints:
+    - port: metrics
+      interval: 30s
+  selector:
+    matchLabels:
+      app: webapp
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: prometheus-k8s
+  namespace: webapp
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - services
+      - endpoints
+      - pods
+    verbs:
+      - get
+      - list
+      - watch
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: prometheus-k8s
+  namespace: webapp
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: prometheus-k8s
+subjects:
+  - kind: ServiceAccount
+    name: prometheus-k8s
+    namespace: monitoring

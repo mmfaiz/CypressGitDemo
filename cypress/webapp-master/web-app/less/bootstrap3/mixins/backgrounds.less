@@ -1,0 +1,115 @@
+//== Backgrounds
+//## BG color mixins
+//------------------------------------------------------------------------------
+
+.mi-bg-variant(@background; @color; @a-color;) {
+    background-color: @background!important;
+    color: @color!important;
+
+    a {
+        color: @a-color;
+
+        &:hover {
+            color: darken(@a-color, 10%);
+        }
+    }
+
+    .lead {
+        color: lighten(@color, 10%);
+    }
+
+    .fa-stack-2x {
+        color: @color;
+    }
+
+    .fa-inverse {
+        color: @background;
+    }
+
+    // Reset buttons - otherwise they get @a-color
+    .btn-default { .btn-default }
+    .btn-info { .btn-info; }
+    .btn-success { .btn-success; }
+    .btn-primary { .btn-primary }
+    .btn-warning { .btn-warning; }
+    .btn-danger { .btn-danger; }
+    .btn-white { .btn-white; }
+}
+
+
+.no-bg {
+    background-color: transparent !important;
+}
+
+.bg-white {
+    .mi-bg-variant(@white; @grey-dark; @link-color;);
+}
+
+.bg-grey-light {
+    .mi-bg-variant(@grey-lighter; @grey-darker; @link-color;);
+}
+
+.bg-grey {
+    .mi-bg-variant(@grey; @white; @link-color;);
+}
+
+.bg-success {
+    .mi-bg-variant(@brand-success; @white; @white;);
+}
+
+.bg-danger {
+    .mi-bg-variant(@brand-danger; @white; @white;);
+}
+
+.bg-inverse {
+    .mi-bg-variant(@black; @white; @white;);
+}
+
+.bg-brand {
+    .mi-bg-variant(@brand-color; @white; @white;);
+
+    input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+        border-color: @white;
+        color: @white;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: @white;
+    }
+
+    .form-control {
+        background-color: darken(@brand-color,5%);
+
+        &::-moz-placeholder {
+            color: @white;
+        }
+
+        &:focus {
+            border-color: desaturate(@brand-color,10%);
+        }
+    }
+
+    .invalid {
+        background-color: @brand-danger;
+    }
+
+    .valid {
+        background-color: @brand-success;
+    }
+}
+
+// Course Color Variants
+
+.course-color-indicator-variant(@bg-color;) {
+    background-color: @bg-color;
+
+    a {
+        color: @white;
+
+        &:hover {
+            color: darken(@bg-color, 10%);
+            text-decoration: none;
+        }
+    }
+}

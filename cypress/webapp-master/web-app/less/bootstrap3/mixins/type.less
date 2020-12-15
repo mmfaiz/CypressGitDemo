@@ -1,0 +1,56 @@
+//== Type
+//## Typographic mixins.
+//------------------------------------------------------------------------------
+
+// Font-family
+.text-sans {
+    font-family: @font-family-sans-serif;
+}
+
+.text-serif {
+    font-family: @font-family-serif;
+}
+
+.text-monospace {
+    font-family: @font-family-monospace;
+}
+
+//** Text colors
+.text-white { color: @white; }
+.text-grey-lighter { color: @grey-lighter; }
+.text-grey-light { color: @grey-light; }
+.text-grey { color: @grey; }
+.text-grey-text { color: @grey-text; }
+.text-grey-dark { color: @grey-dark; }
+.text-grey-darker { color: @grey-darker; }
+.text-black { color: @black; }
+.text-link { color: @link-color; }
+.text-info { color: @brand-info; }
+.text-success { color: @brand-success; }
+.text-warning { color: @brand-warning; }
+.text-danger { color: @brand-danger; }
+
+//** Links
+a.text-black {
+    color: @text-color;
+
+    &:hover {
+        color: @link-color;
+    }
+}
+
+//** Font-weights
+.weight100 { font-weight: 100 !important; }
+.weight400 { font-weight: 400 !important; }
+.weight700 { font-weight: 700 !important; }
+
+//** Font size mixins
+.text-xs { font-size: 0.75em }
+.text-sm { font-size: 0.90em; font-weight: normal; }
+.text-md { font-size: 1.25em; font-weight: normal; }
+.text-lg { font-size: 2.0em; font-weight: normal; }
+.text-xlg { font-size: 2.5em; font-weight: normal; }
+.text-xlg { font-size: 3.0em; font-weight: normal; }
+.text-xxlg { font-size: 5.0em; font-weight: normal; }
+
+.text-wrap { white-space: pre-wrap; }

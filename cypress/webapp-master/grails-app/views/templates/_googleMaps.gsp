@@ -1,0 +1,2 @@
+<% String language = locale ? "&language=$locale" : "" %>
+<script src="https://maps.googleapis.com/maps/api/js?key=${grailsApplication.config.google.maps.api.key}${language}" type="text/javascript"></script>

@@ -1,0 +1,61 @@
+//== User Dasboard
+//##
+//------------------------------------------------------------------------------
+
+.dashboard-top-wrapper {
+
+    .dashboard-top-content {
+
+        .badge-default,
+        .badge-primary,
+        .badge-info,
+        .badge-success,
+        .badge-black {
+            background-color: @white;
+            color: @brand-color;
+            font-size: 1.05em;
+        }
+    }
+
+    .line {
+        background: none repeat scroll 0 0 #fff;
+        border: 0 none;
+        height: 1px;
+        padding-top: 1px;
+    }
+
+    .chart-top {
+
+        .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+        }
+
+        .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+            border-bottom-right-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .btn-default {
+            background-color: darken(@brand-color, 10%);
+            border-color: @white;
+            color: @white;
+        }
+
+        .btn-default:hover,
+        .open > .dropdown-toggle.btn-default {
+            background-color: @brand-color;
+            border-color: @yellow;
+            box-shadow: none;
+            color: @yellow;
+        }
+        .btn-default:focus,
+        .btn-default:active,
+        .btn-default.active {
+            background-color: @brand-color;
+            border-color: @white;
+            box-shadow: none;
+            color: @white;
+        }
+    }
+}

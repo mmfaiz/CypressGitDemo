@@ -1,0 +1,6 @@
+#
+# messages.i18n
+# Client-side i18n, English messages.
+#
+
+@import _messages

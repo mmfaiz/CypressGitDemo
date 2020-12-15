@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: webapp-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/default-backend: 'maintenance'
+    nginx.ingress.kubernetes.io/affinity: 'cookie'
+    nginx.ingress.kubernetes.io/session-cookie-name: 'matchi.ingress'
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: '3'
+    nginx.ingress.kubernetes.io/proxy-read-timeout: '300'
+    nginx.ingress.kubernetes.io/proxy-send-timeout: '300'
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "X-upstream: $upstream_addr";
+      send_timeout 300;
+spec:
+  rules:
+    - host: 'matchi.local'
+      http:
+        paths:
+          - backend:
+              serviceName: webapp
+              servicePort: webapp
+            path: /

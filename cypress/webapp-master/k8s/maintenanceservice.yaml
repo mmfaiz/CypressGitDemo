@@ -1,0 +1,137 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maintenance
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maintenance
+  template:
+    metadata:
+      labels:
+        app: maintenance
+    spec:
+      containers:
+        - name: maintenance
+          image: nginx
+          imagePullPolicy: 'IfNotPresent'
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            timeoutSeconds: 3
+            failureThreshold: 10
+            initialDelaySeconds: 2
+          volumeMounts:
+            - name: maintenance-config
+              mountPath: /usr/share/nginx/html/404.html
+              subPath: 404.html
+            - name: maintenance-config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+
+      volumes:
+        - name: maintenance-config
+          configMap:
+            name: maintenance-config
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: maintenance
+  labels:
+    app: maintenance
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
+  selector:
+    app: maintenance
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: maintenance-config
+data:
+  default.conf: |
+    server {
+        listen       80;
+        server_name  localhost;
+
+        error_page 404 /404.html;
+
+        location /healthz {
+          return 200;
+        }
+    
+        location /api {
+          default_type application/json;
+          return 503 '{"error":"Server is under maintenance"}';
+        }
+
+        # Everything is a 404
+        location / {
+          return 404;
+        }
+
+        # link the code to the file
+        location  = /404.html {
+        root      /usr/share/nginx/html;
+      }
+    }
+
+  404.html: |
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    	<title>MATCHi</title>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<style>
+    		* {
+    			font-family: Arial;
+    			color: #717171;
+    		}
+    		p {
+    		}
+    		h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color:
+    #22AD5C;
+    padding: 5px 0;
+    letter-spacing: -2px;
+    line-height: 40px;
+    			padding: 20px 0;
+    			font-size: 40px;
+    			font-weight: normal;
+    		}
+    		a {
+    			color: #333333;
+    		}
+    		#content {
+    			margin: 150px auto;
+    			text-align: center;
+    			max-width: 700px;
+    			padding: 0 25px;
+    		}
+    	</style>
+    </head>
+    <body>
+    		<div id="content">
+    			<h1>Temporary service disruption</h1>
+    			<p>Some customers are unable to access our server at the moment. You can always try booking through our app even if the website is unavailable.<br><br>Check out our <a href="https://status.matchi.se">status page</a> for updates if the disruption persists.</p><br>
+    				<p><br><br>We're really sorry to be holding you up today! Please know our teams are working hard to get everything up and running.<br></p>
+    		</div>
+    </body>
+    </html>

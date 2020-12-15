@@ -1,0 +1,68 @@
+//== Auth Pages
+//##
+//------------------------------------------------------------------------------
+
+.form-signin {
+    border-left: 1px solid #ccc;
+    margin: 0 auto 0 5px;
+    padding: 15px 15px 15px 30px;
+
+    .form-control {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 10px;
+        padding: 10px;
+        position: relative;
+
+        &:focus {
+            z-index: 2;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-signin-heading,
+    .checkbox {
+        font-weight: normal;
+        margin-bottom: 10px;
+        padding: 0 20px;
+    }
+
+    input[type="email"] {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    input[type="password"] {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+.sign-up-separator {
+    background: none;
+    height: 34px;
+    position: relative;
+    text-align: center;
+
+    .text {
+        background-color: @body-bg;
+        display: inline-block;
+        margin: 0;
+        padding: 8px;
+    }
+
+    hr {
+        margin: -16px auto 10px;
+        width : 90%;
+    }
+
+    &-grey .text {
+        background: @body-bg;
+    }
+}

@@ -1,0 +1,61 @@
+//== Forms
+//##
+//------------------------------------------------------------------------------
+
+input,
+select,
+textarea {
+    border-radius: 0;
+    color: @gray;
+}
+
+input,
+.form-control {
+    padding: @input-padding;
+    font-size: @font-size-small;
+}
+
+input[type="tel"],
+.form-control {
+    font-size: 1em;
+}
+
+label,
+.control-label,
+.help-block,
+.checkbox,
+.radio {
+    // font-size: @font-size-small;
+    font-weight: 300;
+}
+
+// label {
+//     width: auto !important;
+// }
+
+.help-block {
+    color: @grey-light;
+    display: block;
+    margin: 10px 0;
+    padding-bottom: 10px;
+}
+
+.input-group-btn {
+    font-size: inherit;
+}
+
+.form-control.date {
+    font-size: @font-size-small;
+}
+
+.form-control[readonly] {
+    background-color: @white !important;
+    cursor: pointer;
+}
+
+// have to wrap "form-control" with a ".form-group .relative" <div> to use this!
+.validation-icon {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+}

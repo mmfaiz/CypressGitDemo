@@ -1,0 +1,152 @@
+#sidebar {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    width: 300px;
+
+    .sidebar-wrap {
+        margin: 0 0 30px;
+        padding: 20px 10px 30px;
+        position: relative;
+    }
+}
+
+#main-content {
+    margin: 0 300px;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    #sidebar {
+        width: 200px;
+    }
+    #main-content {
+        margin: 0 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    #sidebar {
+        height: 600px;
+        overflow-x: auto;
+        position: relative;
+        width: 100%;
+    }
+    #main-content {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #sidebar {
+        height: 400px;
+        overflow-x: auto;
+        position: relative;
+        width: 100%;
+    }
+    #main-content {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 360px) {
+    #sidebar {}
+    #main-content {}
+}
+
+.panel-admin {
+    .panel-header,
+    .panel-heading {
+
+    }
+
+    .table-header {
+        .vertical-padding5;
+        background-color: @grey-darker;
+
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus {
+            background-color: @brand-color;
+        }
+    }
+
+    table {
+        thead tr th {
+            background-color: #f2f2f2;
+            border-right: 1px solid #ebebeb;
+            .vertical-padding10;
+
+            &:last-child {
+                border-right: none;
+            }
+
+            &.sortable {
+
+                a {
+                    color: @link-color;
+                    display: inline-block;
+                    width: 90%;
+
+                    &:hover {
+                        color: @link-hover-color;
+                        text-decoration: none;
+                    }
+                }
+
+                &::after {
+                    color: @link-color;
+                    content:"\f0dc";
+                    font-family: "Fontawesome";
+                    float: right;
+
+                    &:hover {
+                        color: @link-hover-color;
+                        text-decoration: none;
+                    }
+                }
+
+                &.sorted.asc {
+
+                    &::after {
+                        color: @grey-dark;
+                        content:"\f0d7";
+                        font-family: "Fontawesome";
+                        float: right;
+                    }
+
+                    a {
+                        color: @grey-dark;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    padding: 8px 10px;
+                }
+            }
+        }
+    }
+}
+
+.text-strikethrough {
+    text-decoration: line-through;
+}
+
+.table-hover.rowlink tr:hover td,
+.table-hover .rowlink tr:hover td {
+    background-color: #f2f2f2 !important;
+}
+
+#form-fields {
+
+    .form-module {
+        background-color: @white;
+        border: 1px dashed #ebebeb;
+        border-radius: 2px;
+        padding: 10px;
+        margin: 0 0 10px 0;
+    }
+}

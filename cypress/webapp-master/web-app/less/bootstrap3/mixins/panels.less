@@ -1,0 +1,35 @@
+// Panels
+
+.course-panel-variant(@border; @heading-text-color; @heading-bg-color; @heading-border; @heading-link-color;) {
+    border-color: @border;
+
+    & > .panel-heading {
+        color: @heading-text-color;
+        background-color: @heading-bg-color;
+        border-color: @heading-border;
+
+        a {
+            color: @heading-link-color;
+
+            &:hover {
+                color: darken(@heading-bg-color, 10%);
+                text-decoration: none;
+            }
+        }
+
+        + .panel-collapse > .panel-body {
+            border-top-color: @border;
+        }
+
+        .badge {
+            color: @heading-bg-color;
+            background-color: @heading-text-color;
+        }
+    }
+
+    & > .panel-footer {
+        + .panel-collapse > .panel-body {
+            border-bottom-color: @border;
+        }
+    }
+}
