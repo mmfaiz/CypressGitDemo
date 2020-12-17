@@ -3,7 +3,7 @@
 // Successful login 
 
 
-describe('Matchi AB Automation Testing ', function() {
+describe('Matchi AB Login Test Automation ', function() {
 
     it('Successful Login', function() {
   
@@ -27,7 +27,7 @@ describe('Matchi AB Automation Testing ', function() {
       })
       
 
-      it('Login information is not Correct', function() {
+      it('Incorrect Login information provided', function() {
   
         //Visit the Matchi AB  Website
         cy.visit('/');
@@ -100,7 +100,7 @@ describe('Matchi AB Automation Testing ', function() {
     })
 
 
-/*
+
 it(' Login with new Username and Password', function() {
                    
     //
@@ -119,7 +119,7 @@ it(' Login with new Username and Password', function() {
   
       })
       
-*/
+
 
      it('Test Forget User Password', function() {               
 
@@ -132,7 +132,7 @@ it(' Login with new Username and Password', function() {
 
     })
 
-    it('Explore HmePage of Matchi AB Page and check different menu items', function() {
+    it('Explore Matchi AB Home Page ', function() {
         
         
         // Navigating to "Booking" 

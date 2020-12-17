@@ -34,10 +34,10 @@ describe('Test different options to Book a time slot from Booking Page', functio
            const nbookings = parseFloat($nbookings.text())
            cy.get('tr > .text-right').its('length').should('eq', nbookings)
         })
-      // cy.wait(5000)
+      
         // Show past bookings
         cy.get('div.col-sm-12').children().contains(' Show past bookings').click()
-      // cy.wait(5000)
+      
         cy.go('back')        
    
 
@@ -45,6 +45,8 @@ describe('Test different options to Book a time slot from Booking Page', functio
             cy.get(':nth-child(1) > .text-right > .btn').click()
             cy.scrollTo('bottom')
             cy.get('#userBookingModal > .modal-dialog > .modal-content > .modal-footer')
+            cy.scrollTo('bottom')
+
               .get('.btn-md').contains('Cancel').click({ force: true })
               cy.get('#cancelCloseBtn').click({ force: true })  
     
