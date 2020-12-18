@@ -42,7 +42,7 @@ describe('Loggin and book', () => {
     cy.get('#inOutCourt').select('Indoors',{ force: true })
     cy.get('#sport').select('Table tennis',{ force: true })
     cy.get('#showDate')
-      .invoke('val', '2020-12-17')
+      .invoke('val', '2020-12-24')
       .trigger('change')
     cy.get('#q').click().type("Lundby-Biskopsgården Klubb") 
     cy.get('.col-sm-2 > .btn').eq(0).click();
@@ -167,7 +167,7 @@ it('Test Loggin with membership and check the normal price with coupon', () => {
     cy.get('#inOutCourt').select('Indoors',{ force: true })
     cy.get('#sport').select('Table tennis',{ force: true })
     cy.get('#showDate')
-      .invoke('val', '2020-12-17')
+      .invoke('val', '2020-12-24')
       .trigger('change')
     cy.get('#q').click().type("Lundby-Biskopsgården Klubb") 
     cy.get('.col-sm-2 > .btn').eq(0).click();
